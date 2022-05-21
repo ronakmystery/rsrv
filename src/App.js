@@ -1,5 +1,5 @@
 import "./styles.css";
 
 export default function App() {
-  return <div className="App">test</div>;
+  return <div className="App">beta</div>;
 }
