@@ -6,12 +6,12 @@ import { Home } from "./home";
 import { useSelector } from "react-redux";
 
 export const Main = () => {
-  // const user = useSelector((state) => state.app.user);
-  // console.log(user);
+  const state = useSelector((state) => state);
+  console.log(state);
 
   return (
     <>
-      {/* {`current user is ${user}`} */}
+      {`current user is ${state.user}`}
       {/* <Login /> */}
       <Home />
     </>

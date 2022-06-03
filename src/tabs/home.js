@@ -7,29 +7,33 @@ import React from "react";
 // import { Account } from "../components/account";
 
 import { useSelector, useDispatch } from "react-redux";
-import { setUser } from "../database/redux/actions";
-// import { bindActionCreators } from "redux";
+import { bindActionCreators } from "redux";
 
-// import * as actionCreators from "../database/redux/actions";
+import * as actionCreators from "../database/redux/actions";
 
 export const Home = () => {
-  let state = useSelector((state) => state);
   const dispatch = useDispatch();
-  console.log(state);
+  const state = useSelector((state) => state);
 
-  // const { setUser } = bindActionCreators(actionCreators, dispatch);
+  const { setUser, setStyle, setSetting1 } = bindActionCreators(
+    actionCreators,
+    dispatch
+  );
 
   return (
     <>
       Home
       <button
         onClick={() => {
-          dispatch(setUser("admin"));
+          dispatch(
+            setUser("admin"),
+            setStyle("dark"),
+            setSetting1(!state.settings.etSetting1)
+          );
         }}
       >
         test
       </button>
-      {`current user is ${state.user}`}
       {/* <Account />
       <TodaySummary />
       <Calendar />
