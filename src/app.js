@@ -1,10 +1,13 @@
 import React from "react";
-import { Login } from "./components/login";
+import { Main } from "./tabs/main";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export const App = () => {
   return (
-    <>
-      <Login />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Main />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
