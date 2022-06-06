@@ -1,3 +1,5 @@
+//firebase login
+
 export const LoginForm = () => {
   let inputs = [
     {
@@ -15,6 +17,7 @@ export const LoginForm = () => {
     inputs.forEach((x) => {
       login[x.input] = document.getElementById(x.input).value;
     });
+    console.log(login);
   };
 
   return (
@@ -32,7 +35,7 @@ export const LoginForm = () => {
       <button
         className="login-button"
         onClick={() => {
-          console.log("test");
+          getInputs();
         }}
       >
         login
