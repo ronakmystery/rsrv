@@ -14,7 +14,7 @@ export const Login = () => {
   const { setUser } = bindActionCreators(actionCreators, dispatch);
 
   return (
-    <>
+    <div id="login">
       <div id="app-name">RSRV</div>
       <div id="app-slogan">Never lose a reservation again...</div>
       <button
@@ -26,6 +26,6 @@ export const Login = () => {
       </button>
       <LoginForm />
       <BannerImg />
-    </>
+    </div>
   );
 };
