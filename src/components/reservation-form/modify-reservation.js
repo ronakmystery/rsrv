@@ -2,7 +2,16 @@ import { getReservationInputs } from "../../functions/reservation-obj";
 
 import { useSelector } from "react-redux";
 
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+
+import * as actionCreators from "../../database/redux/actions";
+
 export const ModifyReservation = () => {
+  const dispatch = useDispatch();
+
+  const { addReservation } = bindActionCreators(actionCreators, dispatch);
+
   const state = useSelector((state) => state);
 
   return (
@@ -20,7 +29,7 @@ export const ModifyReservation = () => {
         <button
           id="add-reservation"
           onClick={() => {
-            console.log(getReservationInputs(state.day));
+            addReservation(getReservationInputs(state.day));
           }}
         >
           add

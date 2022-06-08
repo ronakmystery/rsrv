@@ -1,6 +1,6 @@
 import { createStore, combineReducers } from "redux";
-//null ~ guest
-const userReducer = (state = "guest", action) => {
+
+const userReducer = (state = null, action) => {
   switch (action.type) {
     case "setUser":
       return (state = action.data);
@@ -13,6 +13,21 @@ const dayReducer = (state = null, action) => {
   switch (action.type) {
     case "setDay":
       return (state = action.data);
+    default:
+      return state;
+  }
+};
+
+const reservationsReducer = (state = [], action) => {
+  switch (action.type) {
+    case "setReservations":
+      return [...action.data];
+
+    case "addReservation":
+      let newState = state.filter(
+        (reservation) => reservation.id !== action.data
+      );
+      return [...newState, action.data];
     default:
       return state;
   }
@@ -31,7 +46,8 @@ const dayReducer = (state = null, action) => {
 
 export const Reducers = combineReducers({
   user: userReducer,
-  day: dayReducer
+  day: dayReducer,
+  reservations: reservationsReducer
   // settings: setttingsReducer
 });
 
