@@ -9,6 +9,10 @@ import { store } from "./database/redux/reducers";
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
+// store.subscribe(() => {
+//  console.log(store.getState())
+// });
+
 root.render(
   <StrictMode>
     <Provider store={store}>

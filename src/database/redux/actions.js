@@ -5,6 +5,13 @@ export const setUser = (user) => {
   };
 };
 
+export const setDay = (day) => {
+  return {
+    type: "setDay",
+    data: day
+  };
+};
+
 // export const setSetting1 = (setting) => {
 //   return {
 //     type: "setSetting1",

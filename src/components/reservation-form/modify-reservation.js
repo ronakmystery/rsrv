@@ -1,6 +1,10 @@
 import { getReservationInputs } from "../../functions/reservation-obj";
 
+import { useSelector } from "react-redux";
+
 export const ModifyReservation = () => {
+  const state = useSelector((state) => state);
+
   return (
     <>
       <div className="toggle">
@@ -16,7 +20,7 @@ export const ModifyReservation = () => {
         <button
           id="add-reservation"
           onClick={() => {
-            console.log(getReservationInputs());
+            console.log(getReservationInputs(state.day));
           }}
         >
           add
