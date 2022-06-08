@@ -4,7 +4,7 @@ import { ReservationInputs } from "./reservation-inputs";
 import { ModifyReservation } from "./modify-reservation";
 
 export const ReservationForm = () => {
-  const [showForm, setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState(true);
 
   return (
     <div>

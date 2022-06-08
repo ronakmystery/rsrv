@@ -9,6 +9,15 @@ const userReducer = (state = "guest", action) => {
   }
 };
 
+const dayReducer = (state = null, action) => {
+  switch (action.type) {
+    case "setDay":
+      return (state = action.data);
+    default:
+      return state;
+  }
+};
+
 // const setttingsReducer = (state = { style: null, setting1: false }, action) => {
 //   switch (action.type) {
 //     case "setStyle":
@@ -21,7 +30,8 @@ const userReducer = (state = "guest", action) => {
 // };
 
 export const Reducers = combineReducers({
-  user: userReducer
+  user: userReducer,
+  day: dayReducer
   // settings: setttingsReducer
 });
 

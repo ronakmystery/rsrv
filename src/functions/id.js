@@ -25,9 +25,19 @@ export function ID() {
     "w",
     "x",
     "y",
-    "z"
+    "z",
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
   ];
-  return [...new Array(10)]
-    .map((x) => alphabet[Math.floor(Math.random() * 26)])
+  return [...new Array(13)]
+    .map((x) => alphabet[Math.floor(Math.random() * 36)])
     .join("");
 }

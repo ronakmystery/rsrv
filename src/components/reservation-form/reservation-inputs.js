@@ -17,7 +17,7 @@ export const ReservationInputs = () => {
         </div>
       ))}
 
-      <div className="input time">
+      <div className="input">
         <i className="material-icons-round">schedule</i>
         <input type="time" id="time" defaultValue="12:00" required />
       </div>

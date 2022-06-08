@@ -1,6 +1,8 @@
 import { Inputs } from "../database/inputs";
 
-export function getReservationInputs() {
+import { ID } from "./id";
+
+export function getReservationInputs(day) {
   let reservation = {};
   Inputs.forEach((x) => {
     reservation[x.input] = document.getElementById(x.input).value;
@@ -11,7 +13,16 @@ export function getReservationInputs() {
     reservation[x] = document.getElementById(x).value;
   });
 
+  reservation["confirmed"] = document.getElementById(
+    "reservation-confirmed"
+  ).checked;
+  reservation["time"] = document.getElementById("time").value;
+
   reservation.people = parseInt(reservation.people);
+
+  reservation.day = day;
+
+  reservation.id = ID();
 
   return reservation;
 }
