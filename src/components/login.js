@@ -35,6 +35,9 @@ export const Login = () => {
       >
         try now
       </button>
+      <a href="mailto:ronakmystery@gmail.com">
+        <button className="email">sign up</button>
+      </a>
       <LoginForm />
       <BannerImg />
     </div>

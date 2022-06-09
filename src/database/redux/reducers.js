@@ -18,16 +18,26 @@ const dayReducer = (state = null, action) => {
   }
 };
 
+const reservationReducer = (state = null, action) => {
+  switch (action.type) {
+    case "setReservation":
+      return (state = action.data);
+    default:
+      return state;
+  }
+};
+
 const reservationsReducer = (state = [], action) => {
   switch (action.type) {
     case "setReservations":
       return [...action.data];
 
     case "addReservation":
-      let newState = state.filter(
-        (reservation) => reservation.id !== action.data
-      );
-      return [...newState, action.data];
+      return [...state, action.data];
+
+    case "deleteReservation":
+      return state.filter((reservation) => reservation.id !== action.data.id);
+
     default:
       return state;
   }
@@ -47,6 +57,7 @@ const reservationsReducer = (state = [], action) => {
 export const Reducers = combineReducers({
   user: userReducer,
   day: dayReducer,
+  reservation: reservationReducer,
   reservations: reservationsReducer
   // settings: setttingsReducer
 });

@@ -4,20 +4,34 @@ import { useSelector } from "react-redux";
 
 import { ReactComponent as NoReservations } from "../assets/no-reservations.svg";
 
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+
+import * as actionCreators from "../database/redux/actions";
+
 export const Reservations = () => {
+  const dispatch = useDispatch();
+
+  const { setReservation } = bindActionCreators(actionCreators, dispatch);
   const state = useSelector((state) => state);
 
   let todaysReservations = state.reservations.filter(
     (reservation) => reservation.day === state.day
   );
 
-  console.log(state.reservations, todaysReservations, state.day);
   return (
     <div id="reservations">
       {todaysReservations.length !== 0 ? (
         <>
           {todaysReservations.map((reservation) => (
-            <div key={reservation.id}>{reservation.name}</div>
+            <div
+              key={reservation.id}
+              onClick={() => {
+                setReservation(reservation);
+              }}
+            >
+              {reservation.name}
+            </div>
           ))}
         </>
       ) : (

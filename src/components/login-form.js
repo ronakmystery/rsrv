@@ -40,8 +40,6 @@ export const LoginForm = () => {
       >
         login
       </button>
-
-      <div>ronakmystery@gmail.com</div>
     </div>
   );
 };

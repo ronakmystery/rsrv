@@ -26,6 +26,20 @@ export const addReservation = (reservation) => {
   };
 };
 
+export const deleteReservation = (reservation) => {
+  return {
+    type: "deleteReservation",
+    data: reservation
+  };
+};
+
+export const setReservation = (reservation) => {
+  return {
+    type: "setReservation",
+    data: reservation
+  };
+};
+
 // export const setSetting1 = (setting) => {
 //   return {
 //     type: "setSetting1",
