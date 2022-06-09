@@ -1,19 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+
+import { useSelector } from "react-redux";
 
 import { ReservationInputs } from "./reservation-inputs";
 import { ModifyReservation } from "./modify-reservation";
 
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+
+import * as actionCreators from "../../database/redux/actions";
+
 export const ReservationForm = () => {
-  const [showForm, setShowForm] = useState(true);
+  const dispatch = useDispatch();
+
+  const { setReservation } = bindActionCreators(actionCreators, dispatch);
+
+  const [showForm, setShowForm] = useState(false);
+
+  const reservation = useSelector((state) => state.reservation);
+
+  useEffect(() => {
+    if (reservation) {
+      setShowForm(true);
+    }
+  }, [reservation]);
 
   return (
     <div>
-      {showForm ? (
+      {!showForm ? (
         <button>
           <i
             className="material-icons-round"
             onClick={() => {
-              setShowForm(false);
+              setShowForm(true);
             }}
           >
             add
@@ -23,14 +42,18 @@ export const ReservationForm = () => {
         <div id="reservation-form">
           <button
             onClick={() => {
-              setShowForm(true);
+              setShowForm(false);
+              setReservation(null);
             }}
           >
             <i className="material-icons-round">minimize</i>
           </button>
 
-          <ReservationInputs />
-          <ModifyReservation />
+          <ReservationInputs reservation={reservation} />
+          <ModifyReservation
+            setShowForm={setShowForm}
+            setReservation={setReservation}
+          />
         </div>
       )}
     </div>

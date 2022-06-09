@@ -10,7 +10,7 @@ const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
 // store.subscribe(() => {
-//  console.log(store.getState())
+//   console.log(store.getState());
 // });
 
 root.render(

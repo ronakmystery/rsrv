@@ -6,6 +6,8 @@ import { bindActionCreators } from "redux";
 
 import * as actionCreators from "../database/redux/actions";
 
+import "react-calendar/dist/Calendar.css";
+
 export const ReservationCalendar = () => {
   const dispatch = useDispatch();
   const { setDay } = bindActionCreators(actionCreators, dispatch);
@@ -13,7 +15,7 @@ export const ReservationCalendar = () => {
   const [value, onChange] = useState(new Date());
 
   useEffect(() => {
-    setDay(value);
+    setDay(value.toLocaleDateString());
   }, [value]);
 
   return (

@@ -1,52 +1,28 @@
-// import {Calendar } from ".calendar";
+import { ID } from "../functions/id";
 
-// import {ID} from "../functions/id"
+let today = new Date().toLocaleDateString();
 
-// export const Sample = [
-//   {
-//     confirmed: false,
-//     date: { year:Calendar.year(), month:Calendar.monthNumber(), day:Calendar.dayNumber() },
-//     email: "jane@gmail.com",
-//     timestamp:Calendar.timeStamp(),
-//     id: ID(),
-//     name: "jane",
-//     notes: "birthday",
-//     people: 3,
-//     phone: "777-777-7777",
-//     time: {
-//       hour: 13,
-//       minutes: 30
-//     }
-//   },
-
-//   {
-//     confirmed: true,
-//     date: { year:Calendar.year(), month:Calendar.monthNumber(), day:Calendar.dayNumber() },
-//     email: "john@gmail.com",
-//     id: ID(),
-//     name: "john",
-//     timestamp:Calendar.timeStamp(),
-//     notes: "",
-//     people: 5,
-//     phone: "777-777-7777",
-//     time: {
-//       hour: 14,
-//       minutes: 0
-//     }
-//   },
-//   {
-//     confirmed: true,
-//     date: { year:Calendar.year(), month:Calendar.monthNumber(), day:Calendar.dayNumber() },
-//     email: "jack@gmail.com",
-//     id: ID(),
-//     name: "jack",
-//     timestamp:Calendar.timeStamp(),
-//     notes: "",
-//     people: 3,
-//     phone: "777-777-7777",
-//     time: {
-//       hour: 15,
-//       minutes: 0
-//     }
-//   }
-// ];
+export const SampleReservations = [
+  {
+    name: "jane",
+    people: 3,
+    note: "birthday",
+    confirmed: false,
+    day: today,
+    email: "jane@gmail.com",
+    id: ID(),
+    phone: "777-777-7777",
+    time: "17:00"
+  },
+  {
+    name: "john",
+    people: 3,
+    note: "",
+    confirmed: true,
+    day: today,
+    email: "john@gmail.com",
+    id: ID(),
+    phone: "111-777-7777",
+    time: "15:00"
+  }
+];

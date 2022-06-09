@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import { ReactComponent as BannerImg } from "../assets/banner-img.svg";
 import { LoginForm } from "./login-form";
@@ -8,10 +8,20 @@ import { bindActionCreators } from "redux";
 
 import * as actionCreators from "../database/redux/actions";
 
+import { SampleReservations } from "../database/sample";
+
 export const Login = () => {
   const dispatch = useDispatch();
 
-  const { setUser } = bindActionCreators(actionCreators, dispatch);
+  const { setUser, setReservations } = bindActionCreators(
+    actionCreators,
+    dispatch
+  );
+
+  //force guest
+  setUser("guest");
+  setReservations(SampleReservations);
+  //
 
   return (
     <div id="login">
@@ -19,11 +29,15 @@ export const Login = () => {
       <div id="app-slogan">Never lose a reservation again...</div>
       <button
         onClick={() => {
-          dispatch(setUser("guest"));
+          setUser("guest");
+          setReservations(SampleReservations);
         }}
       >
         try now
       </button>
+      <a href="mailto:ronakmystery@gmail.com">
+        <button className="email">sign up</button>
+      </a>
       <LoginForm />
       <BannerImg />
     </div>

@@ -1,9 +1,29 @@
+import { useEffect } from "react";
 import { getReservationInputs } from "../../functions/reservation-obj";
 
 import { useSelector } from "react-redux";
 
-export const ModifyReservation = () => {
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+
+import * as actionCreators from "../../database/redux/actions";
+
+export const ModifyReservation = ({ setShowForm, setReservation }) => {
+  const dispatch = useDispatch();
+
+  const { addReservation, deleteReservation } = bindActionCreators(
+    actionCreators,
+    dispatch
+  );
+
   const state = useSelector((state) => state);
+
+  useEffect(() => {
+    if (state.reservation) {
+      document.getElementById("reservation-confirmed").checked =
+        state.reservation.confirmed;
+    }
+  }, [state.reservation]);
 
   return (
     <>
@@ -15,12 +35,12 @@ export const ModifyReservation = () => {
         </label>
       </div>
 
-      {/* check for reservation */}
-      {true ? (
+      {!state.reservation ? (
         <button
           id="add-reservation"
           onClick={() => {
-            console.log(getReservationInputs(state.day));
+            addReservation(getReservationInputs(state.day));
+            setShowForm(false);
           }}
         >
           add
@@ -31,7 +51,9 @@ export const ModifyReservation = () => {
             id="delete-reservation"
             onClick={() => {
               if (window.confirm("Delete this reservation?")) {
-                console.log("delete");
+                deleteReservation(state.reservation);
+                setShowForm(false);
+                setReservation(null);
               }
             }}
           >
@@ -40,7 +62,10 @@ export const ModifyReservation = () => {
           <button
             id="update-reservation"
             onClick={() => {
-              console.log("update");
+              deleteReservation(state.reservation);
+              addReservation(getReservationInputs(state.day));
+              setShowForm(false);
+              setReservation(null);
             }}
           >
             update
