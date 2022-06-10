@@ -8,12 +8,12 @@ import { bindActionCreators } from "redux";
 
 import * as actionCreators from "../database/redux/actions";
 
-import { SampleReservations } from "../database/sample";
+import { SampleReservations, SampleNotes } from "../database/sample";
 
 export const Login = () => {
   const dispatch = useDispatch();
 
-  const { setUser, setReservations } = bindActionCreators(
+  const { setUser, setReservations, setDailyNotes } = bindActionCreators(
     actionCreators,
     dispatch
   );
@@ -21,6 +21,7 @@ export const Login = () => {
   //force guest
   setUser("guest");
   setReservations(SampleReservations);
+  setDailyNotes(SampleNotes);
   //
 
   return (
