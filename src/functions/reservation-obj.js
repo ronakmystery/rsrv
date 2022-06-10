@@ -5,9 +5,13 @@ import { ID } from "./id";
 export function getReservationInputs(day) {
   let reservation = {};
 
-  ["phone", "name", "email", "note", "time", "people"].forEach((x) => {
+  ["phone", "name", "email", "note", "time"].forEach((x) => {
     reservation[x] = document.getElementById(`reservation-${x}`).value;
   });
+
+  reservation["people"] = parseInt(
+    document.getElementById("reservation-people").value
+  );
 
   reservation["confirmed"] = document.getElementById(
     "reservation-confirmed"
