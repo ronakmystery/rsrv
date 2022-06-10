@@ -1,6 +1,6 @@
 import React from "react";
 
-import { TodaySummary } from "../components/today-summary";
+import { DaySummary } from "../components/day-summary";
 import { ReservationForm } from "../components/reservation-form/reservation-form";
 
 import { ReservationCalendar } from "../components/calendar";
@@ -12,7 +12,7 @@ export const Home = () => {
   return (
     <>
       <Account />
-      {/* <TodaySummary /> */}
+      <DaySummary />
       <ReservationCalendar />
       {/* <DailyNote /> */}
       <Reservations />
