@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import * as actionCreators from "../database/redux/actions";
+import moment from "moment";
 
 export const Reservations = () => {
   const dispatch = useDispatch();
@@ -30,7 +31,8 @@ export const Reservations = () => {
                 setReservation(reservation);
               }}
             >
-              {reservation.name}
+              {reservation.name} {reservation.people}{" "}
+              {moment(reservation.time, ["hh.mm"]).format("h:mm a")}
             </div>
           ))}
         </>
