@@ -5,7 +5,6 @@ import {
   totalPeoplePerHour,
   totalConfirmedPeoplePerHour
 } from "../functions/get-totals";
-import moment from "moment";
 
 export const DaySummary = () => {
   const state = useSelector((state) => state);

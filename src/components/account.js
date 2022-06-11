@@ -23,7 +23,6 @@ export const Account = () => {
         src={logo}
         className="logo"
         onClick={() => {
-          // window.scrollTo(0, 0);
           setSettings(!settings);
         }}
       />

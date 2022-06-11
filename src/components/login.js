@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { ReactComponent as BannerImg } from "../assets/banner-img.svg";
 import { LoginForm } from "./login-form";
@@ -8,7 +8,18 @@ import { bindActionCreators } from "redux";
 
 import * as actionCreators from "../database/redux/actions";
 
-import { SampleReservations, SampleNotes } from "../database/sample";
+import { store } from "../database/redux/reducers";
+
+import { LS } from "../functions/local-storage";
+
+store.subscribe(() => {
+  let state = store.getState();
+  let data = {
+    dailynotes: state.dailynotes,
+    reservations: state.reservations
+  };
+  LS.save(data);
+});
 
 export const Login = () => {
   const dispatch = useDispatch();
@@ -18,20 +29,17 @@ export const Login = () => {
     dispatch
   );
 
-  //force guest
-  setUser("guest");
-  setReservations(SampleReservations);
-  setDailyNotes(SampleNotes);
-  //
-
   return (
     <div id="login">
       <div id="app-name">RSRV</div>
       <div id="app-slogan">Never lose a reservation again...</div>
       <button
         onClick={() => {
+          LS.init();
+
           setUser("guest");
-          setReservations(SampleReservations);
+          setReservations(LS.data.reservations);
+          setDailyNotes(LS.data.dailynotes);
         }}
       >
         try now

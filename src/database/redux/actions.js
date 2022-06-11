@@ -53,10 +53,3 @@ export const addDailyNote = (dailynote) => {
     data: dailynote
   };
 };
-
-// export const setSetting1 = (setting) => {
-//   return {
-//     type: "setSetting1",
-//     data: setting
-//   };
-// };
