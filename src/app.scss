@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Expletus+Sans&family=Hind:wght@300&display=swap');
 
 :root{
-  --primary:'Expletus Sans', cursive;
-  --secondary:'Hind', sans-serif;
+  --primary-font:'Expletus Sans', cursive;
+  --secondary-font:'Hind', sans-serif;
 
   --shadow:0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   --inset-shadow:black 1px 1px 3px 0 inset;
@@ -28,7 +28,7 @@
     }
 
 body,button{
-  font-family:var(--primary);
+  font-family:var(--primary-font);
 }
 
 input{

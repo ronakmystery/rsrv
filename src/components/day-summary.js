@@ -31,7 +31,7 @@ export const DaySummary = () => {
     <div id="day-summary">
       {dayName()} {monthName()} {state.day}
       <div id="people-numbers">
-        <i className="material-icons-round">people</i>
+        <i className="material-icons-round">people</i>{" "}
         <span>
           {totalConfirmedPeoplePerHour(dayReservations())}/
           {totalPeoplePerHour(dayReservations())}

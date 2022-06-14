@@ -11,6 +11,8 @@ import * as actionCreators from "../../database/redux/actions";
 
 import { TimeSlots } from "./time-slots";
 
+import "./reservations.scss";
+
 export const Reservations = () => {
   const dispatch = useDispatch();
 
