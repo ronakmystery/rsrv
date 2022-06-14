@@ -6,6 +6,8 @@ import * as actionCreators from "../database/redux/actions";
 
 import { useSelector } from "react-redux";
 
+import "./account.scss";
+
 export const Account = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
@@ -19,9 +21,9 @@ export const Account = () => {
   return (
     <div id="account">
       <img
-        alt="logo"
+        alt="user-img"
         src={logo}
-        className="logo"
+        id="user-img"
         onClick={() => {
           setSettings(!settings);
         }}
@@ -29,15 +31,16 @@ export const Account = () => {
 
       {!settings && (
         <div id="settings">
-          settings
           <button
-            className="logout-button"
+            id="logout-button"
             onClick={() => {
               setUser(null);
             }}
           >
             logout
           </button>
+
+          <button onClick={() => {}}>???</button>
         </div>
       )}
     </div>

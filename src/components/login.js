@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 
+import "./login.scss";
+
 import { ReactComponent as BannerImg } from "../assets/banner-img.svg";
 import { LoginForm } from "./login-form";
 
@@ -29,11 +31,19 @@ export const Login = () => {
     dispatch
   );
 
+  //force guest
+  LS.init();
+  setUser("guest");
+  setReservations(LS.data.reservations);
+  setDailyNotes(LS.data.dailynotes);
+  //
+
   return (
-    <div id="login">
+    <div id="login-page">
       <div id="app-name">RSRV</div>
       <div id="app-slogan">Never lose a reservation again...</div>
       <button
+        id="try-now-button"
         onClick={() => {
           LS.init();
 
@@ -45,10 +55,10 @@ export const Login = () => {
         try now
       </button>
       <a href="mailto:ronakmystery@gmail.com">
-        <button className="email">sign up</button>
+        <button id="sign-up-button">sign up</button>
       </a>
       <LoginForm />
-      <BannerImg />
+      <BannerImg id="login-banner-img" />
     </div>
   );
 };

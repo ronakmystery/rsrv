@@ -1,4 +1,5 @@
 //firebase login
+import "./login-form.scss";
 
 export const LoginForm = () => {
   let inputs = [
@@ -22,7 +23,7 @@ export const LoginForm = () => {
 
   return (
     <div id="login-form">
-      <div className="login-inputs">
+      <div>
         {inputs.map((x) => (
           <input
             id={x.input}
@@ -33,7 +34,7 @@ export const LoginForm = () => {
         ))}
       </div>
       <button
-        className="login-button"
+        id="login-button"
         onClick={() => {
           getInputs();
         }}

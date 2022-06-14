@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Expletus+Sans&family=Hind:wght@300&display=swap');
+
 :root{
-  --font:'Ubuntu', sans-serif;
+  --primary:'Expletus Sans', cursive;
+  --secondary:'Hind', sans-serif;
+
   --shadow:0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  --inset:black 1px 1px 3px 0 inset;
+  --inset-shadow:black 1px 1px 3px 0 inset;
   --theme:#6b63ff;
   --green:#3acc6c;
   --red:#d50000;
@@ -13,4 +17,42 @@
   ::-webkit-scrollbar {
     display: none;
     }
-    
+
+    html{
+      font-size: 100%;
+    }
+
+    body{
+      margin:0;padding:0;
+      background:var(--light);
+    }
+
+body,button{
+  font-family:var(--primary);
+}
+
+input{
+  margin: 10px;
+  border: none;
+  box-shadow: var(--inset-shadow);
+  border-radius: 5px;
+  padding: 5px 10px;
+ 
+}
+
+button{
+  cursor:pointer;
+  box-shadow: var(--shadow);
+  text-transform:uppercase;
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+      &:active{
+        background:var(--green) !important;
+        color:white !important;
+      }
+}    
+
+a{
+  text-decoration:none;
+}

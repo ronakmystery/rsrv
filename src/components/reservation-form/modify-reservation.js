@@ -18,23 +18,8 @@ export const ModifyReservation = ({ setShowForm, setReservation }) => {
 
   const state = useSelector((state) => state);
 
-  useEffect(() => {
-    if (state.reservation) {
-      document.getElementById("reservation-confirmed").checked =
-        state.reservation.confirmed;
-    }
-  }, [state.reservation]);
-
   return (
     <>
-      <div className="toggle">
-        CONFIRMED
-        <label>
-          <input type="checkbox" id="reservation-confirmed" />
-          <span />
-        </label>
-      </div>
-
       {!state.reservation ? (
         <button
           id="add-reservation"

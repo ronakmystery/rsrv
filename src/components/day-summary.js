@@ -6,6 +6,8 @@ import {
   totalConfirmedPeoplePerHour
 } from "../functions/get-totals";
 
+import "./day-summary.scss";
+
 export const DaySummary = () => {
   const state = useSelector((state) => state);
 
@@ -26,13 +28,15 @@ export const DaySummary = () => {
   dayReservations();
 
   return (
-    <div id="today-summary">
+    <div id="day-summary">
       {dayName()} {monthName()} {state.day}
-      <i className="material-icons-round">people</i>
-      <span>
-        {totalConfirmedPeoplePerHour(dayReservations())}/
-        {totalPeoplePerHour(dayReservations())}
-      </span>
+      <div id="people-numbers">
+        <i className="material-icons-round">people</i>
+        <span>
+          {totalConfirmedPeoplePerHour(dayReservations())}/
+          {totalPeoplePerHour(dayReservations())}
+        </span>
+      </div>
     </div>
   );
 };
