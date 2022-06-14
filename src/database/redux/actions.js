@@ -40,9 +40,16 @@ export const setReservation = (reservation) => {
   };
 };
 
-// export const setSetting1 = (setting) => {
-//   return {
-//     type: "setSetting1",
-//     data: setting
-//   };
-// };
+export const setDailyNotes = (dailynotes) => {
+  return {
+    type: "setDailyNotes",
+    data: dailynotes
+  };
+};
+
+export const addDailyNote = (dailynote) => {
+  return {
+    type: "addDailyNote",
+    data: dailynote
+  };
+};

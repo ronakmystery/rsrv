@@ -7,11 +7,21 @@ export const ReservationInputs = ({ reservation }) => {
       ["name", "people", "note", "time", "phone", "email"].forEach((x) => {
         document.getElementById(`reservation-${x}`).value = reservation[x];
       });
+      document.getElementById("reservation-confirmed").checked =
+        reservation.confirmed;
     }
   }, [reservation]);
 
   return (
     <div id="reservation-inputs">
+      <div className="toggle">
+        CONFIRMED
+        <label>
+          <input type="checkbox" id="reservation-confirmed" />
+          <span />
+        </label>
+      </div>
+
       {Inputs.map((x) => (
         <div key={x.input} className="input">
           <i className="material-icons-round">{x.icon}</i>

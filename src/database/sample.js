@@ -26,3 +26,7 @@ export const SampleReservations = [
     time: "15:00"
   }
 ];
+
+export const SampleNotes = {
+  [today]: "Daily Note..."
+};
