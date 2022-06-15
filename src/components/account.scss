@@ -2,13 +2,13 @@
   position: absolute;
   top:0;right:0;margin: 20px;
 cursor: pointer;
-
-  #user-img{
-    height: 50px;width: 50px;
-    box-shadow:var(--shadow);
-    border-radius:5px;
-  }
   
+}
+
+#user-img{
+  height: 50px;width: 50px;
+  box-shadow:var(--shadow);
+  border-radius:5px;
 }
 
 #settings{

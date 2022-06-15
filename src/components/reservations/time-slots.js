@@ -55,7 +55,9 @@ export const TimeSlots = ({ todaysReservations, setReservation }) => {
             {timeSlots[timeSlot].map((reservation) => (
               <div
                 key={reservation.id}
-                className="reservation"
+                className={`reservation ${
+                  reservation.confirmed ? "confirmed" : ""
+                }`}
                 id={
                   state.reservation && reservation.id === state.reservation.id
                     ? "selected-reservation"

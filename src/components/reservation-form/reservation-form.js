@@ -10,6 +10,8 @@ import { bindActionCreators } from "redux";
 
 import * as actionCreators from "../../database/redux/actions";
 
+import "./reservation-form.scss";
+
 export const ReservationForm = () => {
   const dispatch = useDispatch();
 
@@ -26,9 +28,9 @@ export const ReservationForm = () => {
   }, [reservation]);
 
   return (
-    <div>
+    <>
       {!showForm ? (
-        <button>
+        <button id="open-reservation-button">
           <i
             className="material-icons-round"
             onClick={() => {
@@ -41,6 +43,7 @@ export const ReservationForm = () => {
       ) : (
         <div id="reservation-form">
           <button
+            id="close-reservation-form"
             onClick={() => {
               setShowForm(false);
               setReservation(null);
@@ -56,6 +59,6 @@ export const ReservationForm = () => {
           />
         </div>
       )}
-    </div>
+    </>
   );
 };

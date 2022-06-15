@@ -19,7 +19,7 @@ export const ModifyReservation = ({ setShowForm, setReservation }) => {
   const state = useSelector((state) => state);
 
   return (
-    <>
+    <div id="reservation-buttons">
       {!state.reservation ? (
         <button
           id="add-reservation"
@@ -57,6 +57,6 @@ export const ModifyReservation = ({ setShowForm, setReservation }) => {
           </button>
         </>
       )}
-    </>
+    </div>
   );
 };

@@ -10,45 +10,60 @@
   white-space: nowrap;
   overflow: scroll;
   
-  .time-slot{
-    margin:20px;
-    vertical-align: top;
+
+}
+
+.time-slot{
+  margin:20px;
+  vertical-align: top;
 display: inline-block;
 margin-right:0;
 &:last-child {
-  margin-right: 20px;
+margin-right: 20px;
 }
 
-    font-size: 1.5rem;
-        .reservations{
-          font-size: 1rem;
-          margin-left:20px;         
-    
-          .reservation{
-            cursor: pointer;
-            box-shadow: var(--shadow);
-            margin: 20px 10px;
-            padding: 5px 10px;
-            border-radius: 5px;
+  font-size: 1.5rem;
+     
+    }
 
-            &#selected-reservation{
-              transition: .3s;
-  background: var(--green);
-  color:var(--light);
-            }
-          }
-        }
-      }
+.reservations{
+  font-size: 1rem;
+  margin-left:20px;         
+
 }
 
+
+.reservation{
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  margin: 20px;
+  padding: 5px 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+
+  &.confirmed{
+    background:var(--theme);
+    color:var(--light)
+  }
+
+  &#selected-reservation{
+    transition: .3s;
+background: var(--green);
+color:var(--light);
+  }
+}
   
 
  
 
 
   #no-reservations{
+    span{
+      margin: 10px 20px;
+    display: inline-block;
+    }
     svg{
-      width: calc(100% - 20px);
+      width: calc(100% - 40px);
       margin: auto;
       display: block;
       height: 200px;
