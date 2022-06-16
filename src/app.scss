@@ -7,6 +7,8 @@
   --shadow:0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   --inset-shadow:black 1px 1px 3px 0 inset;
   --theme:#6b63ff;
+  --yellow:#ffd600;
+  --blue:#1e88e5;
   --green:#3acc6c;
   --red:#d50000;
   
@@ -25,6 +27,12 @@
     body{
       margin:0;padding:0;
       background:var(--light);
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+  &::after {
+    content: "";
+    display: block;
+    height: 400px;
+  }
     }
 
 body,button{
@@ -37,10 +45,10 @@ input{
   box-shadow: var(--inset-shadow);
   border-radius: 5px;
   padding: 5px 10px;
- 
 }
 
 button{
+background:none;
   cursor:pointer;
   box-shadow: var(--shadow);
   text-transform:uppercase;

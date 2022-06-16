@@ -12,7 +12,7 @@ export const TimeSlots = ({ todaysReservations, setReservation }) => {
   const state = useSelector((state) => state);
 
   let convert24to12 = (time) => {
-    return moment(time, ["hh.mm"]).format("h:mm a");
+    return moment(time, ["hh.mm"]).format("h:mm");
   };
 
   let convertToHour = (time) => {
@@ -67,8 +67,8 @@ export const TimeSlots = ({ todaysReservations, setReservation }) => {
                   setReservation(reservation);
                 }}
               >
-                {reservation.name} {reservation.people}{" "}
-                {convert24to12(reservation.time)}
+                <span className="time">{convert24to12(reservation.time)}</span>{" "}
+                {reservation.name} {reservation.people}
               </div>
             ))}
           </div>

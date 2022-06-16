@@ -1,21 +1,28 @@
+#login-page{
+  text-align: center;
 
+}
 
 #app-name{
 font-size: 3rem;
 margin: 20px ;
-margin-bottom: 0;
 color:var(--theme);
 }
 
-#app-slogan{
+
+#about{
+  margin: 20px;
   font-family: var(--secondary-font);
-  font-size: 1.5rem;
-  margin-left:60px;
-  margin-right:20px;
+  color:black;
+}
+
+#try-now-button{
+  background: var(--green);
+  color:var(--light)
 }
 
 #try-now-button,#sign-up-button{
-  margin:20px 0 20px 20px;
+  margin:0 20px;
   }
 
   #login-banner-img{

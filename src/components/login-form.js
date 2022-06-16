@@ -23,7 +23,7 @@ export const LoginForm = () => {
 
   return (
     <div id="login-form">
-      <div>
+      <>
         {inputs.map((x) => (
           <input
             id={x.input}
@@ -32,7 +32,7 @@ export const LoginForm = () => {
             type={x.type}
           />
         ))}
-      </div>
+      </>
       <button
         id="login-button"
         onClick={() => {

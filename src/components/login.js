@@ -31,33 +31,34 @@ export const Login = () => {
     dispatch
   );
 
+  let loginGuest = () => {
+    LS.init();
+    setUser("guest");
+    setReservations(LS.data.reservations);
+    setDailyNotes(LS.data.dailynotes);
+  };
+
   //force guest
-  LS.init();
-  setUser("guest");
-  setReservations(LS.data.reservations);
-  setDailyNotes(LS.data.dailynotes);
+  // loginGuest()
   //
 
   return (
     <div id="login-page">
       <div id="app-name">RSRV</div>
-      <div id="app-slogan">Never lose a reservation again...</div>
       <button
         id="try-now-button"
         onClick={() => {
-          LS.init();
-
-          setUser("guest");
-          setReservations(LS.data.reservations);
-          setDailyNotes(LS.data.dailynotes);
+          loginGuest();
         }}
       >
         try now
       </button>
+
+      {/* <LoginForm /> */}
       <a href="mailto:ronakmystery@gmail.com">
-        <button id="sign-up-button">sign up</button>
+        <div id="about">Designed & Developed by Ronak Mistry</div>
+        {/* <button id="sign-up-button">sign up</button> */}
       </a>
-      <LoginForm />
       <BannerImg id="login-banner-img" />
     </div>
   );

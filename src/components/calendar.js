@@ -6,7 +6,7 @@ import { bindActionCreators } from "redux";
 
 import * as actionCreators from "../database/redux/actions";
 
-// import "react-calendar/dist/Calendar.css";
+import "react-calendar/dist/Calendar.css";
 import "./calendar.scss";
 
 export const ReservationCalendar = () => {

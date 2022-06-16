@@ -9,7 +9,6 @@
 #time-slots{
   white-space: nowrap;
   overflow: scroll;
-  
 
 }
 
@@ -18,23 +17,25 @@
   vertical-align: top;
 display: inline-block;
 margin-right:0;
+
 &:last-child {
 margin-right: 20px;
-}
-
-  font-size: 1.5rem;
-     
+}     
     }
 
 .reservations{
   font-size: 1rem;
-  margin-left:20px;         
-
+  margin-left:10px;         
+  .time{
+    font-size: 1.25rem;
+  }
 }
 
 
 .reservation{
+  width: fit-content;
   cursor: pointer;
+  background:white;
   box-shadow: var(--shadow);
   margin: 20px;
   padding: 5px 10px;
@@ -58,6 +59,7 @@ color:var(--light);
 
 
   #no-reservations{
+    padding-bottom: 20px;
     span{
       margin: 10px 20px;
     display: inline-block;
