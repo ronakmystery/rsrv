@@ -39,6 +39,7 @@
 
   .input{
 input{
+  font-family: var(--secondary-font);
   appearance: none;
 }
     margin:10px;
@@ -47,6 +48,7 @@ input{
       margin-right: 5px;
     }
     textarea{
+      font-family: var(--secondary-font);
       appearance: none;
       display: block;
       resize: none;

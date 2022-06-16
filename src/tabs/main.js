@@ -16,19 +16,20 @@ export const Main = () => {
 
   const canvas = useRef();
 
+
   return (
     <motion.div id="main" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       {!state.user ? <Login /> : <Home />}
 
-      {window.screen.width > 1000 && state.user && (
+      {window.innerWidth> 1000 && state.user && (
         <div id="ipad">
           <div id="draw">
             <CanvasDraw
               ref={canvas}
               hideGrid={true}
-              canvasWidth={window.screen.width - 460}
+              canvasWidth={window.innerWidth - 350}
               hideInterface={true}
-              canvasHeight={window.screen.height - 40}
+              canvasHeight={window.innerHeight}
               brushRadius={1}
               enablePanAndZoom={true}
               lazyRadius={0}
