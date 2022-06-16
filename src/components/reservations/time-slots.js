@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment";
+import { useSelector } from "react-redux";
 
 import {
   totalPeoplePerHour,
   totalConfirmedPeoplePerHour
 } from "../../functions/get-totals";
 
+import { motion } from "framer-motion";
+
 export const TimeSlots = ({ todaysReservations, setReservation }) => {
   const [timeSlots, setTimeSlots] = useState({});
+  const state = useSelector((state) => state);
 
   let convert24to12 = (time) => {
-    return moment(time, ["hh.mm"]).format("h:mm a");
+    return moment(time, ["hh.mm"]).format("h:mm");
   };
 
   let convertToHour = (time) => {
@@ -31,41 +35,50 @@ export const TimeSlots = ({ todaysReservations, setReservation }) => {
         ...todaysReservations.filter(
           (reservation) => convertToHour(reservation.time) === hour
         )
-      ];
+      ].sort((a, b) => (a.time > b.time ? 1 : -1));
     });
 
     setTimeSlots(timeSlots);
   }, [todaysReservations]);
 
   return (
-    <>
+    <div id="time-slots">
       {Object.keys(timeSlots).map((timeSlot) => (
-        <div key={timeSlot}>
-          {timeSlot}
-
+        <div key={timeSlot} className="time-slot">
+          {timeSlot}{" "}
           <span className="confirmed-total-people">
-            <i className="material-icons-round">people</i>
+            <i className="material-icons-round">people</i>{" "}
             <span className="people-number">
               {totalConfirmedPeoplePerHour(timeSlots[timeSlot])}/
               {totalPeoplePerHour(timeSlots[timeSlot])}
             </span>
           </span>
-
           <div className="reservations">
-            {timeSlots[timeSlot].map((reservation) => (
-              <div
+            {timeSlots[timeSlot].map((reservation, n) => (
+              <motion.div
+                initial={{ x: 20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: n * 0.1 }}
                 key={reservation.id}
+                className={`reservation ${
+                  reservation.confirmed ? "confirmed" : ""
+                }`}
+                id={
+                  state.reservation && reservation.id === state.reservation.id
+                    ? "selected-reservation"
+                    : ""
+                }
                 onClick={() => {
                   setReservation(reservation);
                 }}
               >
-                {reservation.name} {reservation.people}{" "}
-                {convert24to12(reservation.time)}
-              </div>
+                <span className="time">{convert24to12(reservation.time)}</span>{" "}
+                {reservation.name} {reservation.people}
+              </motion.div>
             ))}
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 };

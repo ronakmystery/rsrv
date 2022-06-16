@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Expletus+Sans&family=Hind:wght@300&display=swap');
 
 :root{
-  --primary:'Expletus Sans', cursive;
-  --secondary:'Hind', sans-serif;
+  --primary-font:'Expletus Sans', cursive;
+  --secondary-font:'Hind', sans-serif;
 
   --shadow:0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   --inset-shadow:black 1px 1px 3px 0 inset;
   --theme:#6b63ff;
+  --yellow:#ffd600;
+  --blue:#1e88e5;
   --green:#3acc6c;
   --red:#d50000;
   
@@ -25,10 +27,16 @@
     body{
       margin:0;padding:0;
       background:var(--light);
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+  &::after {
+    content: "";
+    display: block;
+    height: 400px;
+  }
     }
 
 body,button{
-  font-family:var(--primary);
+  font-family:var(--primary-font);
 }
 
 input{
@@ -37,10 +45,10 @@ input{
   box-shadow: var(--inset-shadow);
   border-radius: 5px;
   padding: 5px 10px;
- 
 }
 
 button{
+background:none;
   cursor:pointer;
   box-shadow: var(--shadow);
   text-transform:uppercase;
@@ -55,4 +63,52 @@ button{
 
 a{
   text-decoration:none;
+}
+
+
+.toggle {
+  line-height: 20px;
+  margin: 20px;
+  label {
+    margin-left: 10px;
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      &:checked + span {
+        background: var(--theme);
+      }
+      &:checked + span:before {
+        transform: translateX(20px);
+        background-color: var(--light);
+      }
+    }
+    span {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      box-shadow: var(--inset-shadow);
+      transition: 0.3s;
+      border-radius: 5px;
+      &:before {
+        position: absolute;
+        content: "";
+        height: 15px;
+        width: 15px;
+        left: 2.5px;
+        bottom: 2.5px;
+        background-color: var(--theme);
+        transition: 0.3s;
+        border-radius: 4px;
+        box-shadow: var(--shadow);
+      }
+    }
+  }
 }

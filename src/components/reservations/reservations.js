@@ -11,6 +11,10 @@ import * as actionCreators from "../../database/redux/actions";
 
 import { TimeSlots } from "./time-slots";
 
+import "./reservations.scss";
+
+import { motion } from "framer-motion";
+
 export const Reservations = () => {
   const dispatch = useDispatch();
 
@@ -22,7 +26,12 @@ export const Reservations = () => {
   );
 
   return (
-    <div id="reservations">
+    <motion.div
+      id="reservations"
+      initial={{ scale: 0.75, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ delay: 0.9 }}
+    >
       {todaysReservations.length !== 0 ? (
         <TimeSlots
           setReservation={setReservation}
@@ -34,6 +43,6 @@ export const Reservations = () => {
           <NoReservations />
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };

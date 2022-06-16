@@ -1,0 +1,87 @@
+#open-reservation-button{
+  position: fixed;
+  background:white;
+  right:0;bottom:0;
+  margin:20px;
+  padding: 5px;
+  box-shadow: var(--shadow);
+  border-radius: 5px;
+  line-height: 0;
+  i{
+    color:black;
+    font-size: 2rem;
+  }
+}
+
+#close-reservation-form{
+  i{
+    font-size: 1.5rem;
+    color:black;
+  }
+  border-radius:0 5px 0 5px;
+  position: absolute;
+  top: 0;right:0;
+  background:white;
+  margin: 0;
+}
+
+
+#reservation-form{
+  z-index: 100;
+
+  position: fixed;
+  box-sizing: border-box;
+  width: 100%;
+  bottom: 0px;
+  background: var(--light);
+  box-shadow: var(--shadow);
+  border-radius: 5px;
+
+  .input{
+input{
+  appearance: none;
+}
+    margin:10px;
+    i{
+      font-size:1.5rem;
+      margin-right: 5px;
+    }
+    textarea{
+      appearance: none;
+      display: block;
+      resize: none;
+      border-radius: 5px;
+      border: none;
+      box-shadow: var(--inset-shadow);
+      padding: 5px 10px;
+    }
+  } 
+}
+
+#reservation-inputs{
+  height:200px;
+  overflow: scroll;
+  box-shadow: var(--inset-shadow);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 20px;
+}
+
+
+#reservation-buttons{
+  margin:60px;
+  button{
+    margin:15px;
+    background:white;
+    color:black;
+  }
+  #add-reservation,#update-reservation{
+    position: absolute;
+    right:0;bottom:0;
+  }
+  #delete-reservation{
+    position: absolute;
+    left:0;bottom:0;
+  }
+}
+

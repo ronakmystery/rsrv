@@ -8,6 +8,8 @@ import {
 
 import "./day-summary.scss";
 
+import { motion } from "framer-motion";
+
 export const DaySummary = () => {
   const state = useSelector((state) => state);
 
@@ -28,15 +30,19 @@ export const DaySummary = () => {
   dayReservations();
 
   return (
-    <div id="day-summary">
+    <motion.div
+      id="day-summary"
+      initial={{ scale: 0.75, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+    >
       {dayName()} {monthName()} {state.day}
       <div id="people-numbers">
-        <i className="material-icons-round">people</i>
+        <i className="material-icons-round">people</i>{" "}
         <span>
           {totalConfirmedPeoplePerHour(dayReservations())}/
           {totalPeoplePerHour(dayReservations())}
         </span>
       </div>
-    </div>
+    </motion.div>
   );
 };
