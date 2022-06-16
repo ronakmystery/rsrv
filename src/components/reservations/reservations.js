@@ -30,7 +30,7 @@ export const Reservations = () => {
       id="reservations"
       initial={{ scale: 0.75, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
-      transition={{ delay: 0.9 }}
+      transition={{ delay: 0.8 }}
     >
       {todaysReservations.length !== 0 ? (
         <TimeSlots
@@ -38,10 +38,14 @@ export const Reservations = () => {
           todaysReservations={todaysReservations}
         />
       ) : (
-        <div id="no-reservations">
+        <motion.div
+          id="no-reservations"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
           <span>No reservations...</span>
           <NoReservations />
-        </div>
+        </motion.div>
       )}
     </motion.div>
   );

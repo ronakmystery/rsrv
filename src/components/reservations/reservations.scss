@@ -1,7 +1,4 @@
 #reservations{
-  transition: .3s;
-  font-family: var(--secondary-font);
-  font-size: 1.5rem;
   margin: 20px;
   margin-top: 0px;
   border-radius: 5px;
@@ -14,6 +11,7 @@
 }
 
 .time-slot{
+  font-family: var(--primary-font);
   margin:20px;
   vertical-align: top;
 display: inline-block;
@@ -27,13 +25,11 @@ margin-right: 20px;
 .reservations{
   font-size: 1rem;
   margin-left:10px;         
-  .time{
-    font-size: 1.25rem;
-  }
 }
 
 
 .reservation{
+  position: relative;
   width: fit-content;
   cursor: pointer;
   background:white;
@@ -53,6 +49,12 @@ margin-right: 20px;
 background: var(--green);
 color:var(--light);
   }
+
+  .note-notification{
+color:var(--yellow);
+margin-left:10px;
+font-size: 20px;
+  }
 }
   
 
@@ -60,9 +62,8 @@ color:var(--light);
 
 
   #no-reservations{
-    padding-bottom: 20px;
     span{
-      margin: 10px 20px;
+      margin: 20px;
     display: inline-block;
     }
     svg{
@@ -73,3 +74,4 @@ color:var(--light);
     }
   }
 }
+

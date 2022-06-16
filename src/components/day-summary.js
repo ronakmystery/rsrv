@@ -32,8 +32,9 @@ export const DaySummary = () => {
   return (
     <motion.div
       id="day-summary"
-      initial={{ scale: 0.75, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.2 }}
     >
       {dayName()} {monthName()} {state.day}
       <div id="people-numbers">

@@ -74,6 +74,9 @@ export const TimeSlots = ({ todaysReservations, setReservation }) => {
               >
                 <span className="time">{convert24to12(reservation.time)}</span>{" "}
                 {reservation.name} {reservation.people}
+                {reservation.note && (
+                  <i className="material-icons-round note-notification">note</i>
+                )}
               </motion.div>
             ))}
           </div>

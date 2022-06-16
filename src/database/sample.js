@@ -16,14 +16,25 @@ export const SampleReservations = [
   },
   {
     name: "john",
-    people: 3,
+    people: 4,
     note: "",
     confirmed: true,
     day: today,
     email: "john@gmail.com",
     id: ID(),
-    phone: "111-777-7777",
+    phone: "777-777-7777",
     time: "15:00"
+  },
+  {
+    name: "jack",
+    people: 5,
+    note: "",
+    confirmed: false,
+    day: today,
+    email: "jack@gmail.com",
+    id: ID(),
+    phone: "777-777-7777",
+    time: "15:30"
   }
 ];
 
