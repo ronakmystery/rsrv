@@ -8,6 +8,8 @@ import * as actionCreators from "../database/redux/actions";
 
 import "./daily-note.scss";
 
+import { motion } from "framer-motion";
+
 export const DailyNote = () => {
   const dispatch = useDispatch();
 
@@ -24,7 +26,10 @@ export const DailyNote = () => {
   }, [state.day]);
 
   return (
-    <div
+    <motion.div
+      initial={{ scale: 0.75, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ delay: 0.6 }}
       id="daily-note"
       contentEditable={true}
       onInput={(e) => {

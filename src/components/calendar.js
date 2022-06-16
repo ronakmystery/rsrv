@@ -9,6 +9,8 @@ import * as actionCreators from "../database/redux/actions";
 import "react-calendar/dist/Calendar.css";
 import "./calendar.scss";
 
+import { motion } from "framer-motion";
+
 export const ReservationCalendar = () => {
   const dispatch = useDispatch();
   const { setDay } = bindActionCreators(actionCreators, dispatch);
@@ -20,8 +22,13 @@ export const ReservationCalendar = () => {
   }, [value]);
 
   return (
-    <div id="calendar">
+    <motion.div
+      id="calendar"
+      initial={{ scale: 0.75, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ delay: 0.3 }}
+    >
       <Calendar onChange={onChange} value={value} />
-    </div>
+    </motion.div>
   );
 };

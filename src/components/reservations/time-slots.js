@@ -7,6 +7,8 @@ import {
   totalConfirmedPeoplePerHour
 } from "../../functions/get-totals";
 
+import { motion } from "framer-motion";
+
 export const TimeSlots = ({ todaysReservations, setReservation }) => {
   const [timeSlots, setTimeSlots] = useState({});
   const state = useSelector((state) => state);
@@ -33,7 +35,7 @@ export const TimeSlots = ({ todaysReservations, setReservation }) => {
         ...todaysReservations.filter(
           (reservation) => convertToHour(reservation.time) === hour
         )
-      ];
+      ].sort((a, b) => (a.time > b.time ? 1 : -1));
     });
 
     setTimeSlots(timeSlots);
@@ -52,8 +54,11 @@ export const TimeSlots = ({ todaysReservations, setReservation }) => {
             </span>
           </span>
           <div className="reservations">
-            {timeSlots[timeSlot].map((reservation) => (
-              <div
+            {timeSlots[timeSlot].map((reservation, n) => (
+              <motion.div
+                initial={{ x: 20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: n * 0.1 }}
                 key={reservation.id}
                 className={`reservation ${
                   reservation.confirmed ? "confirmed" : ""
@@ -69,7 +74,7 @@ export const TimeSlots = ({ todaysReservations, setReservation }) => {
               >
                 <span className="time">{convert24to12(reservation.time)}</span>{" "}
                 {reservation.name} {reservation.people}
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

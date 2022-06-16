@@ -38,9 +38,8 @@ export const Login = () => {
     setDailyNotes(LS.data.dailynotes);
   };
 
-  //force guest
-  // loginGuest()
-  //
+  // force guest
+  // loginGuest();
 
   return (
     <div id="login-page">

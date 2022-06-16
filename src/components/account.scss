@@ -12,9 +12,10 @@ cursor: pointer;
 }
 
 #settings{
+  z-index: 100;
   position: absolute;
   box-shadow:var(--shadow);
-  right: 0px;top:60px;
+  right: 0px;top:70px;
   padding: 10px;
   border-radius: 5px;
   background: var(--light);

@@ -12,6 +12,8 @@ import * as actionCreators from "../../database/redux/actions";
 
 import "./reservation-form.scss";
 
+import { motion } from "framer-motion";
+
 export const ReservationForm = () => {
   const dispatch = useDispatch();
 
@@ -41,7 +43,11 @@ export const ReservationForm = () => {
           </i>
         </button>
       ) : (
-        <div id="reservation-form">
+        <motion.div
+          id="reservation-form"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+        >
           <button
             id="close-reservation-form"
             onClick={() => {
@@ -57,7 +63,7 @@ export const ReservationForm = () => {
             setShowForm={setShowForm}
             setReservation={setReservation}
           />
-        </div>
+        </motion.div>
       )}
     </>
   );

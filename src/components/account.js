@@ -8,6 +8,8 @@ import { useSelector } from "react-redux";
 
 import "./account.scss";
 
+import { motion } from "framer-motion";
+
 export const Account = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
@@ -30,7 +32,11 @@ export const Account = () => {
       />
 
       {!settings && (
-        <div id="settings">
+        <motion.div
+          id="settings"
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+        >
           <button
             id="logout-button"
             onClick={() => {
@@ -41,7 +47,7 @@ export const Account = () => {
           </button>
 
           <button onClick={() => {}}>???</button>
-        </div>
+        </motion.div>
       )}
     </div>
   );
