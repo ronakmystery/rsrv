@@ -22,16 +22,16 @@ export const Account = () => {
 
   return (
     <div id="account">
-      <img
-        alt="user-img"
-        src={logo}
-        id="user-img"
-        onClick={() => {
-          setSettings(!settings);
-        }}
-      />
-
-      {!settings && (
+      {settings ? (
+        <img
+          alt="user-img"
+          src={logo}
+          id="user-img"
+          onClick={() => {
+            setSettings(!settings);
+          }}
+        />
+      ) : (
         <motion.div
           id="settings"
           initial={{ y: -20, opacity: 0 }}
@@ -46,7 +46,15 @@ export const Account = () => {
             logout
           </button>
 
-          <button onClick={() => {}}>???</button>
+          <i
+            id="close-settings"
+            onClick={() => {
+              setSettings(!settings);
+            }}
+            className="material-icons-round"
+          >
+            arrow_forward
+          </i>
         </motion.div>
       )}
     </div>

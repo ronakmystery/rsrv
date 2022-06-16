@@ -1,3 +1,51 @@
-#app{
-  transition: .3s;
+#main{
+  height: 100%;
+
+  &::after {
+    content: "";
+    display: block;
+    height: 400px;
+  }
+}
+
+
+#draw {
+  display: block;
+  div {
+    position: absolute;
+    margin: 20px;
+    right: 65px;
+    border-radius: 10px;
+    box-shadow: var(--inset-shadow);
+  }
+
+  .erase {
+    margin: 20px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+}
+
+
+
+@media(min-width: 1000px){
+
+#main{
+  width:350px;
+  position: absolute;
+  box-shadow: var(--shadow);
+}
+  #ipad{
+position:fixed;
+right: 0;top:0;
+  }
+
+  #open-reservation-button{
+    left:0;right:unset;
+  }
+
+  #reservation-form{
+    width:350px;
+  }
 }

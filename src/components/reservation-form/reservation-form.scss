@@ -35,7 +35,7 @@
   bottom: 0px;
   background: var(--light);
   box-shadow: var(--shadow);
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0;
 
   .input{
 input{
@@ -59,7 +59,7 @@ input{
 }
 
 #reservation-inputs{
-  height:200px;
+  height:150px;
   overflow: scroll;
   box-shadow: var(--inset-shadow);
   border-radius: 5px;

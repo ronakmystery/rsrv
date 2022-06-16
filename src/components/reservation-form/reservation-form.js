@@ -55,7 +55,7 @@ export const ReservationForm = () => {
               setReservation(null);
             }}
           >
-            <i className="material-icons-round">minimize</i>
+            <i className="material-icons-round">arrow_downward</i>
           </button>
 
           <ReservationInputs reservation={reservation} />
