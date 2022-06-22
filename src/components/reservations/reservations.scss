@@ -43,7 +43,7 @@ margin-right: 20px;
     text-decoration: line-through;
   }
 
-  &#selected-reservation{
+  &.selected-reservation{
     transition: .3s;
 background: var(--green);
 color:var(--light);
@@ -53,6 +53,14 @@ color:var(--light);
 color:var(--yellow);
 margin-left:10px;
 font-size: 20px;
+  }
+
+  .reservation-name{
+    display: inline-block;
+    width: 70px;
+    margin:0 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 }
   

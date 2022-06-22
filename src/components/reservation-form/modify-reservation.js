@@ -49,7 +49,7 @@ export const ModifyReservation = ({ setShowForm, setReservation }) => {
             id="update-reservation"
             onClick={() => {
               updateReservation(
-                getReservationInputs(state.day, state.reservation.id)
+                getReservationInputs(state.day, state.reservation)
               );
               setShowForm(false);
               setReservation(null);

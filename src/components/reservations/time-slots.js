@@ -55,18 +55,21 @@ export const TimeSlots = ({ todaysReservations, setReservation }) => {
                 key={reservation.id}
                 className={`reservation ${
                   reservation.confirmed ? "confirmed" : ""
-                }`}
-                id={
+                }
+                ${
                   state.reservation && reservation.id === state.reservation.id
                     ? "selected-reservation"
-                    : reservation.id
+                    : ""
                 }
+                `}
+                id={reservation.id}
                 onClick={() => {
                   setReservation(reservation);
                 }}
               >
-                <span className="time">{convert24to12(reservation.time)}</span>{" "}
-                {reservation.name} {reservation.people}
+                {convert24to12(reservation.time)}
+                <div className="reservation-name">{reservation.name} </div>
+                {reservation.people}
                 {reservation.note && (
                   <i className="material-icons-round note-notification">note</i>
                 )}

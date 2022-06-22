@@ -24,6 +24,15 @@ export const Canvas = ({ state }) => {
 
   const constraintsRef = useRef(null);
 
+  let updateReservationPosition = (e, reservation) => {
+    reservation.position = {};
+    reservation.position.x =
+      e.currentTarget.getBoundingClientRect().x - 350 - 20;
+    reservation.position.y = e.currentTarget.getBoundingClientRect().y - 20;
+
+    updateReservation(reservation);
+  };
+
   return (
     <div id="canvas">
       {
@@ -35,34 +44,38 @@ export const Canvas = ({ state }) => {
               dragElastic={0}
               dragConstraints={constraintsRef}
               onTouchEnd={(e) => {
-                reservation.position = {};
-                reservation.position.x =
-                  e.currentTarget.getBoundingClientRect().x - 350;
-                reservation.position.y = e.currentTarget.getBoundingClientRect().y;
-
-                updateReservation(reservation);
+                updateReservationPosition(e, reservation);
               }}
               initial={{
                 opacity: 0,
-                left: reservation.position.x,
-                top: reservation.position.y
+                left: reservation.position?.x,
+                top: reservation.position?.y
               }}
               animate={{ opacity: 1 }}
-              transition={{ delay: n * 0.1 }}
               key={reservation.id}
               className={`canvas-reservation ${
                 reservation.confirmed ? "confirmed" : ""
-              }`}
+              }
+              ${
+                state.reservation && reservation.id === state.reservation.id
+                  ? "selected-reservation"
+                  : ""
+              }
+              `}
               id={`canvas-${reservation.id}`}
               onClick={() => {
                 setReservation(reservation);
+
+                document.getElementById(`${reservation.id}`).scrollIntoView({
+                  behavior: "smooth",
+                  block: "nearest",
+                  inline: "center"
+                });
               }}
             >
-              <span className="time">{convert24to12(reservation.time)}</span>{" "}
-              {reservation.name} {reservation.people}
-              {reservation.note && (
-                <i className="material-icons-round note-notification">note</i>
-              )}
+              <div>{convert24to12(reservation.time)}</div>
+              <div className="reservation-name">{reservation.name} </div>
+              <div>{reservation.people}</div>
             </motion.div>
           ))}
         </div>

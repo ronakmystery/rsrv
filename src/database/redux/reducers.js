@@ -21,7 +21,14 @@ const dayReducer = (state = null, action) => {
 const reservationReducer = (state = null, action) => {
   switch (action.type) {
     case "setReservation":
-      return action.data;
+      if (action.data == null) {
+        return null;
+      } else if (state?.id === action.data.id) {
+        return null;
+      } else {
+        return action.data;
+      }
+
     default:
       return state;
   }
