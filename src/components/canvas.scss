@@ -1,0 +1,41 @@
+#canvas{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: calc(100% - 350px);
+  height: 100%;
+}
+
+#canvas-reservations{
+  margin: 20px;
+  box-sizing: border-box;
+  height: 50%;
+  width: calc(100% - 40px);
+  border-radius: 5px;
+  position: absolute;
+  box-shadow: var(--inset-shadow);
+}
+
+.canvas-reservation{
+ width:50px;
+  font-size: .75rem;
+  box-shadow: var(--shadow);
+  border-radius: 5px;
+  padding: 5px;
+background:white;  
+transition: background .3s;
+  display: inline-block;
+  position: absolute;
+  &.confirmed{
+    text-decoration: line-through;
+  }
+  &.selected-reservation{
+background: var(--green);
+color:var(--light);
+  }
+
+  .reservation-name{
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}

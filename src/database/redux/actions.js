@@ -33,6 +33,13 @@ export const deleteReservation = (reservation) => {
   };
 };
 
+export const updateReservation = (reservation) => {
+  return {
+    type: "updateReservation",
+    data: reservation
+  };
+};
+
 export const setReservation = (reservation) => {
   return {
     type: "setReservation",

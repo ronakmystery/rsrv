@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import moment from "moment";
 import { useSelector } from "react-redux";
 
 import {
@@ -9,17 +8,11 @@ import {
 
 import { motion } from "framer-motion";
 
+import { convertToHour, convert24to12 } from "../../functions/time";
+
 export const TimeSlots = ({ todaysReservations, setReservation }) => {
   const [timeSlots, setTimeSlots] = useState({});
   const state = useSelector((state) => state);
-
-  let convert24to12 = (time) => {
-    return moment(time, ["hh.mm"]).format("h:mm");
-  };
-
-  let convertToHour = (time) => {
-    return moment(time, ["hh.mm"]).format("hA");
-  };
 
   useEffect(() => {
     let timeSlots = {};
@@ -62,18 +55,21 @@ export const TimeSlots = ({ todaysReservations, setReservation }) => {
                 key={reservation.id}
                 className={`reservation ${
                   reservation.confirmed ? "confirmed" : ""
-                }`}
-                id={
+                }
+                ${
                   state.reservation && reservation.id === state.reservation.id
                     ? "selected-reservation"
                     : ""
                 }
+                `}
+                id={reservation.id}
                 onClick={() => {
                   setReservation(reservation);
                 }}
               >
-                <span className="time">{convert24to12(reservation.time)}</span>{" "}
-                {reservation.name} {reservation.people}
+                {convert24to12(reservation.time)}
+                <div className="reservation-name">{reservation.name} </div>
+                {reservation.people}
                 {reservation.note && (
                   <i className="material-icons-round note-notification">note</i>
                 )}

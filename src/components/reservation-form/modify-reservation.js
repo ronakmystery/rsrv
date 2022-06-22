@@ -11,10 +11,11 @@ import * as actionCreators from "../../database/redux/actions";
 export const ModifyReservation = ({ setShowForm, setReservation }) => {
   const dispatch = useDispatch();
 
-  const { addReservation, deleteReservation } = bindActionCreators(
-    actionCreators,
-    dispatch
-  );
+  const {
+    addReservation,
+    deleteReservation,
+    updateReservation
+  } = bindActionCreators(actionCreators, dispatch);
 
   const state = useSelector((state) => state);
 
@@ -47,8 +48,9 @@ export const ModifyReservation = ({ setShowForm, setReservation }) => {
           <button
             id="update-reservation"
             onClick={() => {
-              deleteReservation(state.reservation);
-              addReservation(getReservationInputs(state.day));
+              updateReservation(
+                getReservationInputs(state.day, state.reservation)
+              );
               setShowForm(false);
               setReservation(null);
             }}

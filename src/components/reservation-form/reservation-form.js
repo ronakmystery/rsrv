@@ -26,6 +26,8 @@ export const ReservationForm = () => {
   useEffect(() => {
     if (reservation) {
       setShowForm(true);
+    } else {
+      setShowForm(false);
     }
   }, [reservation]);
 

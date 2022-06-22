@@ -17,7 +17,6 @@ import { motion } from "framer-motion";
 
 export const Reservations = () => {
   const dispatch = useDispatch();
-
   const { setReservation } = bindActionCreators(actionCreators, dispatch);
   const state = useSelector((state) => state);
 
