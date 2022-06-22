@@ -33,6 +33,22 @@ export const Canvas = ({ state }) => {
     updateReservation(reservation);
   };
 
+  const [tally, setTally] = useState({});
+
+  useEffect(() => {
+    let x = {};
+    todaysReservations.forEach((r) => {
+      if (r.server) {
+        if (x[r.server]) {
+          x[r.server] += r.people;
+        } else {
+          x[r.server] = r.people;
+        }
+      }
+    });
+    setTally(x);
+  }, [state]);
+
   return (
     <div id="canvas">
       {
@@ -76,10 +92,23 @@ export const Canvas = ({ state }) => {
               <div>{convert24to12(reservation.time)}</div>
               <div className="reservation-name">{reservation.name} </div>
               <div>{reservation.people}</div>
+              <div className="reservation-server">
+                {reservation.server.slice(0, 3)}
+              </div>
             </motion.div>
           ))}
         </div>
       }
+
+      <div id="server-tally">
+        {state.servers
+          .filter((server) => tally[server] > 0)
+          .map((server) => (
+            <div key={server} className="server">
+              {tally[server]} {server}
+            </div>
+          ))}
+      </div>
     </div>
   );
 };

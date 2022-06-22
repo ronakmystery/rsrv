@@ -40,12 +40,13 @@ margin-right: 20px;
   border-radius: 5px;
 
   &.confirmed{
-    text-decoration: line-through;
+    opacity: .25 !important;
   }
 
   &.selected-reservation{
     transition: .3s;
 background: var(--green);
+opacity: 1 !important;
   }
 
   .note-notification{
