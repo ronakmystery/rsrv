@@ -18,7 +18,8 @@ store.subscribe(() => {
   let state = store.getState();
   let data = {
     dailynotes: state.dailynotes,
-    reservations: state.reservations
+    reservations: state.reservations,
+    servers: state.servers
   };
   LS.save(data);
 });
@@ -26,16 +27,19 @@ store.subscribe(() => {
 export const Login = () => {
   const dispatch = useDispatch();
 
-  const { setUser, setReservations, setDailyNotes } = bindActionCreators(
-    actionCreators,
-    dispatch
-  );
+  const {
+    setUser,
+    setReservations,
+    setDailyNotes,
+    setServers
+  } = bindActionCreators(actionCreators, dispatch);
 
   let loginGuest = () => {
     LS.init();
     setUser("guest");
     setReservations(LS.data.reservations);
     setDailyNotes(LS.data.dailynotes);
+    setServers(LS.data.servers);
   };
 
   // force guest

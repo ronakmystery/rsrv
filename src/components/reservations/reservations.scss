@@ -15,8 +15,8 @@
   margin:20px;
   vertical-align: top;
 display: inline-block;
-margin-right:0;
 
+margin-right:0;
 &:last-child {
 margin-right: 20px;
 }     
@@ -46,7 +46,6 @@ margin-right: 20px;
   &.selected-reservation{
     transition: .3s;
 background: var(--green);
-color:var(--light);
   }
 
   .note-notification{

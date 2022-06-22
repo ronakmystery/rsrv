@@ -60,3 +60,10 @@ export const addDailyNote = (dailynote) => {
     data: dailynote
   };
 };
+
+export const setServers = (servers) => {
+  return {
+    type: "setServers",
+    data: servers
+  };
+};

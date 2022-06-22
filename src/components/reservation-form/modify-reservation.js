@@ -8,7 +8,7 @@ import { bindActionCreators } from "redux";
 
 import * as actionCreators from "../../database/redux/actions";
 
-export const ModifyReservation = ({ setShowForm, setReservation }) => {
+export const ModifyReservation = ({ setShowForm, setReservation, server }) => {
   const dispatch = useDispatch();
 
   const {
@@ -25,7 +25,8 @@ export const ModifyReservation = ({ setShowForm, setReservation }) => {
         <button
           id="add-reservation"
           onClick={() => {
-            addReservation(getReservationInputs(state.day));
+            let day = state.day;
+            addReservation(getReservationInputs(day));
             setShowForm(false);
           }}
         >
@@ -48,8 +49,11 @@ export const ModifyReservation = ({ setShowForm, setReservation }) => {
           <button
             id="update-reservation"
             onClick={() => {
+              let id = state.reservation.id;
+              let day = state.day;
+              let position = state.reservation.position;
               updateReservation(
-                getReservationInputs(state.day, state.reservation)
+                getReservationInputs(day, id, server, position)
               );
               setShowForm(false);
               setReservation(null);
