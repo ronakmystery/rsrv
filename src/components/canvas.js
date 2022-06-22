@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 
 import { convert24to12 } from "../functions/time";
+import { getInitals } from "../functions/get-initals";
 
 import "./canvas.scss";
 
@@ -38,11 +39,17 @@ export const Canvas = ({ state }) => {
   useEffect(() => {
     let x = {};
     todaysReservations.forEach((r) => {
-      if (r.server) {
-        if (x[r.server]) {
-          x[r.server] += r.people;
+      if (r.server?.id) {
+        if (x[r.server.id]) {
+          x[r.server.id] = {
+            name: r.server.name,
+            people: (x[r.server.id].people += r.people)
+          };
         } else {
-          x[r.server] = r.people;
+          x[r.server.id] = {
+            name: r.server.name,
+            people: r.people
+          };
         }
       }
     });
@@ -92,22 +99,22 @@ export const Canvas = ({ state }) => {
               <div>{convert24to12(reservation.time)}</div>
               <div className="reservation-name">{reservation.name} </div>
               <div>{reservation.people}</div>
-              <div className="reservation-server">
-                {reservation.server.slice(0, 3)}
-              </div>
+              {reservation.server?.name && (
+                <div className="reservation-server">
+                  {getInitals(reservation.server.name)}
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
       }
 
       <div id="server-tally">
-        {state.servers
-          .filter((server) => tally[server] > 0)
-          .map((server) => (
-            <div key={server} className="server">
-              {tally[server]} {server}
-            </div>
-          ))}
+        {Object.keys(tally).map((id) => (
+          <div key={id} className="server">
+            {tally[id].people} {tally[id].name}
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -12,7 +12,7 @@
   border-radius:5px;
 }
 
-#settings{
+#top-bar{
   
   box-shadow:var(--shadow);
   padding: 10px;
@@ -25,7 +25,7 @@
 
 }
 
-#close-settings{
+#close-top-bar{
   background:white;
   cursor: pointer;
 box-shadow: var(--shadow);
@@ -34,3 +34,4 @@ position: absolute;
 border-radius: 5px 0 0 5px;
 right: 0;
 }
+

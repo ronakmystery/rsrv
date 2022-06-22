@@ -31,18 +31,20 @@ export const ReservationInputs = ({
         <div id="servers">
           {servers.map((s) => (
             <button
-              className={`server ${s === server ? "reservation-server" : ""}`}
-              key={s}
-              id={s}
+              className={`server ${
+                s.id === server?.id ? "reservation-server" : ""
+              }`}
+              key={s.id}
+              id={s.id}
               onClick={() => {
-                if (server === s) {
-                  setServer("");
+                if (server?.id === s.id) {
+                  setServer({});
                 } else {
                   setServer(s);
                 }
               }}
             >
-              {s}
+              {s.name}
             </button>
           ))}
         </div>

@@ -2,38 +2,43 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 
-import * as actionCreators from "../database/redux/actions";
+import * as actionCreators from "../../database/redux/actions";
 
 import { useSelector } from "react-redux";
 
 import "./account.scss";
 
 import { motion } from "framer-motion";
+import { Settings } from "./settings";
 
 export const Account = () => {
-  const dispatch = useDispatch();
   const state = useSelector((state) => state);
 
-  const [settings, setSettings] = useState([false]);
+  const [topBar, setTopBar] = useState(false);
 
+  const [settings, setSettings] = useState(false);
+
+  const dispatch = useDispatch();
   const { setUser } = bindActionCreators(actionCreators, dispatch);
 
   let logo = `https://res.cloudinary.com/baudelaire/image/upload/w_100/v1587884625/reserve/${state.user}`;
 
   return (
     <div id="account">
-      {settings ? (
+      {!topBar && (
         <img
           alt="user-img"
           src={logo}
           id="user-img"
           onClick={() => {
-            setSettings(!settings);
+            setTopBar(true);
           }}
         />
-      ) : (
+      )}
+
+      {topBar && (
         <motion.div
-          id="settings"
+          id="top-bar"
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
         >
@@ -47,14 +52,20 @@ export const Account = () => {
           </button>
 
           <i
-            id="close-settings"
+            id="close-top-bar"
             onClick={() => {
-              setSettings(!settings);
+              setTopBar(false);
             }}
             className="material-icons-round"
           >
             arrow_forward
           </i>
+
+          <Settings
+            settings={settings}
+            setSettings={setSettings}
+            state={state}
+          />
         </motion.div>
       )}
     </div>

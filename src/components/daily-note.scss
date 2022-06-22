@@ -1,6 +1,7 @@
 #daily-note{
   background:var(--yellow);
-box-shadow: var(--shadow);
+box-shadow: var(--inset-shadow);
+border-radius: 5px;
 margin: 20px;
 padding: 10px;
 font-family: var(--primary-font);

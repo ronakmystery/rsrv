@@ -42,20 +42,21 @@ opacity: 1 !important;
   }
   .reservation-server{
     position: absolute;
-    top:-10px;right:-20px;
+    top: -15px;
+    right: -15px;
     text-transform: uppercase;
     padding: 5px;
     box-shadow: var(--shadow);
-    background:var(--theme);
-    color:white;
-    border-radius:5px;
+    background: var(--theme);
+    color: white;
+    border-radius: 5px;
   }
 }
 
 #server-tally{
   position: absolute;
   bottom: 0;
-  right:0;
+  left:0;
   margin: 20px;
 
   .server{
