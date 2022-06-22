@@ -1,7 +1,12 @@
 import React, { useEffect } from "react";
 import { Inputs } from "../../database/inputs";
 
-export const ReservationInputs = ({ reservation }) => {
+export const ReservationInputs = ({
+  reservation,
+  server,
+  setServer,
+  servers
+}) => {
   useEffect(() => {
     if (reservation) {
       ["name", "people", "note", "time", "phone", "email"].forEach((x) => {
@@ -9,6 +14,7 @@ export const ReservationInputs = ({ reservation }) => {
       });
       document.getElementById("reservation-confirmed").checked =
         reservation.confirmed;
+      setServer(reservation.server);
     }
   }, [reservation]);
 
@@ -22,6 +28,25 @@ export const ReservationInputs = ({ reservation }) => {
         </label>
       </div>
       <div id="reservation-inputs">
+        <div id="servers">
+          {servers.map((s) => (
+            <button
+              className={`server ${s === server ? "reservation-server" : ""}`}
+              key={s}
+              id={s}
+              onClick={() => {
+                if (server === s) {
+                  setServer("");
+                } else {
+                  setServer(s);
+                }
+              }}
+            >
+              {s}
+            </button>
+          ))}
+        </div>
+
         {Inputs.map((x) => (
           <div key={x.input} className="input">
             <i className="material-icons-round">{x.icon}</i>

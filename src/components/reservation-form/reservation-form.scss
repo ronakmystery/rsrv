@@ -33,7 +33,7 @@
   box-sizing: border-box;
   width: 100%;
   bottom: 0px;
-  background: var(--light);
+  background: var(--green);
   box-shadow: var(--shadow);
   border-radius: 5px 5px 0 0;
 
@@ -87,3 +87,27 @@ input{
   }
 }
 
+
+
+#servers{
+
+  box-shadow: var(--inset-shadow);
+  overflow: scroll;
+  white-space: nowrap;
+border-radius: 5px;
+background:var(--light);
+  .server{
+    margin:10px;
+    margin-right:0;
+    &:last-child {
+    margin-right: 20px;
+    }   
+    display: inline;
+    &.reservation-server{
+      background:var(--theme);
+      color:white;
+    }
+  }
+
+
+}

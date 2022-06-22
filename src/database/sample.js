@@ -44,3 +44,5 @@ export const SampleReservations = [
 export const SampleNotes = {
   [today]: "Daily Note..."
 };
+
+export const SampleServers = ["vincent", "adam", "eve", "logan"];

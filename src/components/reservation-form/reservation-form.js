@@ -21,15 +21,19 @@ export const ReservationForm = () => {
 
   const [showForm, setShowForm] = useState(false);
 
-  const reservation = useSelector((state) => state.reservation);
+  const [server, setServer] = useState("");
+
+  const state = useSelector((state) => state);
 
   useEffect(() => {
-    if (reservation) {
+    if (state.reservation) {
       setShowForm(true);
+      setServer(state.reservation.server);
     } else {
       setShowForm(false);
+      setServer("");
     }
-  }, [reservation]);
+  }, [state.reservation]);
 
   return (
     <>
@@ -55,15 +59,23 @@ export const ReservationForm = () => {
             onClick={() => {
               setShowForm(false);
               setReservation(null);
+              setServer("");
             }}
           >
             <i className="material-icons-round">arrow_downward</i>
           </button>
 
-          <ReservationInputs reservation={reservation} />
+          <ReservationInputs
+            reservation={state.reservation}
+            server={server}
+            setServer={setServer}
+            servers={state.servers}
+          />
+
           <ModifyReservation
             setShowForm={setShowForm}
             setReservation={setReservation}
+            server={server}
           />
         </motion.div>
       )}

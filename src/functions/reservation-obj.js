@@ -2,7 +2,7 @@ import { Inputs } from "../database/inputs";
 
 import { ID } from "./id";
 
-export function getReservationInputs(day, previous) {
+export function getReservationInputs(day, id, server, position) {
   let reservation = {};
 
   ["phone", "name", "email", "note", "time"].forEach((x) => {
@@ -19,14 +19,18 @@ export function getReservationInputs(day, previous) {
 
   reservation.day = day;
 
-  if (previous) {
-    reservation.id = previous.id;
+  if (server) {
+    reservation.server = server;
+  }
+
+  if (id) {
+    reservation.id = id;
   } else {
     reservation.id = ID();
   }
 
-  if (previous) {
-    reservation.position = previous.position;
+  if (position) {
+    reservation.position = position;
   } else {
     reservation.position = {};
   }

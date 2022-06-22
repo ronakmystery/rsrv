@@ -18,6 +18,15 @@ const dayReducer = (state = null, action) => {
   }
 };
 
+const serversReducer = (state = [], action) => {
+  switch (action.type) {
+    case "setServers":
+      return action.data;
+    default:
+      return state;
+  }
+};
+
 const reservationReducer = (state = null, action) => {
   switch (action.type) {
     case "setReservation":
@@ -72,7 +81,8 @@ export const Reducers = combineReducers({
   day: dayReducer,
   reservation: reservationReducer,
   reservations: reservationsReducer,
-  dailynotes: dailynotesReducer
+  dailynotes: dailynotesReducer,
+  servers: serversReducer
 });
 
 export const store = createStore(Reducers);
