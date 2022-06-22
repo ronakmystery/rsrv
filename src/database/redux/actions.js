@@ -67,3 +67,17 @@ export const setServers = (servers) => {
     data: servers
   };
 };
+
+export const addServer = (server) => {
+  return {
+    type: "addServer",
+    data: server
+  };
+};
+
+export const deleteServer = (server) => {
+  return {
+    type: "deleteServer",
+    data: server
+  };
+};

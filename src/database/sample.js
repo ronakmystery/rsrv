@@ -45,4 +45,17 @@ export const SampleNotes = {
   [today]: "Daily Note..."
 };
 
-export const SampleServers = ["vincent", "adam", "eve", "logan"];
+export const SampleServers = [
+  {
+    name: "vincent jacob",
+    id: ID()
+  },
+  {
+    name: "adam eve",
+    id: ID()
+  },
+  {
+    name: "eve adam",
+    id: ID()
+  }
+];

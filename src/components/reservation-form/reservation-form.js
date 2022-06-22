@@ -21,7 +21,7 @@ export const ReservationForm = () => {
 
   const [showForm, setShowForm] = useState(false);
 
-  const [server, setServer] = useState("");
+  const [server, setServer] = useState({});
 
   const state = useSelector((state) => state);
 
@@ -31,7 +31,7 @@ export const ReservationForm = () => {
       setServer(state.reservation.server);
     } else {
       setShowForm(false);
-      setServer("");
+      setServer({});
     }
   }, [state.reservation]);
 
@@ -59,7 +59,7 @@ export const ReservationForm = () => {
             onClick={() => {
               setShowForm(false);
               setReservation(null);
-              setServer("");
+              setServer({});
             }}
           >
             <i className="material-icons-round">arrow_downward</i>

@@ -22,6 +22,12 @@ const serversReducer = (state = [], action) => {
   switch (action.type) {
     case "setServers":
       return action.data;
+
+    case "addServer":
+      return [...state, action.data];
+
+    case "deleteServer":
+      return state.filter((server) => server.id !== action.data.id);
     default:
       return state;
   }

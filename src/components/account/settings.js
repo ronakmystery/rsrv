@@ -1,10 +1,22 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
+import { useDispatch } from "react-redux";
+import { bindActionCreators, compose } from "redux";
+
 import "./settings.scss";
+import * as actionCreators from "../../database/redux/actions";
+import { ID } from "../../functions/id";
 
 export const Settings = ({ settings, setSettings, state }) => {
-  console.log(state);
+  const dispatch = useDispatch();
+  const { addServer, deleteServer } = bindActionCreators(
+    actionCreators,
+    dispatch
+  );
+
+  const [server, setServer] = useState("");
+
   return (
     <>
       {!settings && (
@@ -16,8 +28,6 @@ export const Settings = ({ settings, setSettings, state }) => {
           settings
         </button>
       )}
-
-      <AnimatePresence></AnimatePresence>
 
       <AnimatePresence>
         {settings && (
@@ -39,10 +49,38 @@ export const Settings = ({ settings, setSettings, state }) => {
 
             <div id="servers-setting">
               {state.servers.map((s) => (
-                <button id={s} key={s}>
-                  {s}
+                <button
+                  id={s.id}
+                  key={s.id}
+                  onClick={() => {
+                    if (window.confirm("Delete Server?")) {
+                      deleteServer(s);
+                    }
+                  }}
+                >
+                  {s.name}
                 </button>
               ))}
+
+              <div id="add-server">
+                <input
+                  placeholder="server..."
+                  value={server}
+                  onChange={(e) => setServer(e.target.value)}
+                ></input>
+                <i
+                  className="material-icons-round"
+                  onClick={() => {
+                    addServer({
+                      id: ID(),
+                      name: server
+                    });
+                    setServer("");
+                  }}
+                >
+                  check
+                </i>
+              </div>
             </div>
           </motion.div>
         )}
