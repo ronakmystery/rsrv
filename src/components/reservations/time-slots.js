@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import moment from "moment";
 import { useSelector } from "react-redux";
 
 import {
@@ -9,17 +8,11 @@ import {
 
 import { motion } from "framer-motion";
 
+import { convertToHour, convert24to12 } from "../../functions/time";
+
 export const TimeSlots = ({ todaysReservations, setReservation }) => {
   const [timeSlots, setTimeSlots] = useState({});
   const state = useSelector((state) => state);
-
-  let convert24to12 = (time) => {
-    return moment(time, ["hh.mm"]).format("h:mm");
-  };
-
-  let convertToHour = (time) => {
-    return moment(time, ["hh.mm"]).format("hA");
-  };
 
   useEffect(() => {
     let timeSlots = {};
@@ -66,7 +59,7 @@ export const TimeSlots = ({ todaysReservations, setReservation }) => {
                 id={
                   state.reservation && reservation.id === state.reservation.id
                     ? "selected-reservation"
-                    : ""
+                    : reservation.id
                 }
                 onClick={() => {
                   setReservation(reservation);

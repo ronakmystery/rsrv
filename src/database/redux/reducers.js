@@ -38,6 +38,10 @@ const reservationsReducer = (state = [], action) => {
     case "deleteReservation":
       return state.filter((reservation) => reservation.id !== action.data.id);
 
+    case "updateReservation":
+      state = state.filter((reservation) => reservation.id !== action.data.id);
+      return [...state, action.data];
+
     default:
       return state;
   }

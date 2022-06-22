@@ -9,6 +9,8 @@ import { motion } from "framer-motion";
 
 import "./main.scss";
 
+import { Canvas } from "../components/canvas";
+
 export const Main = () => {
   const state = useSelector((state) => state);
 
@@ -16,21 +18,7 @@ export const Main = () => {
     <motion.div id="main" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       {!state.user ? <Login /> : <Home />}
 
-      {window.innerWidth > 1000 && state.user && (
-        <div id="ipad">
-          <div id="draw">
-            <button
-              className="erase"
-              onClick={() => {
-                if (window.confirm("Clear canvas?")) {
-                }
-              }}
-            >
-              <i className="material-icons-round">clear</i>
-            </button>
-          </div>
-        </div>
-      )}
+      {window.innerWidth > 1000 && state.user && <Canvas state={state} />}
     </motion.div>
   );
 };

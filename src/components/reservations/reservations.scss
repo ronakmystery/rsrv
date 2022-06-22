@@ -40,8 +40,7 @@ margin-right: 20px;
   border-radius: 5px;
 
   &.confirmed{
-    background:var(--theme);
-    color:var(--light)
+    text-decoration: line-through;
   }
 
   &#selected-reservation{

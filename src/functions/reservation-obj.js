@@ -2,7 +2,7 @@ import { Inputs } from "../database/inputs";
 
 import { ID } from "./id";
 
-export function getReservationInputs(day) {
+export function getReservationInputs(day, id) {
   let reservation = {};
 
   ["phone", "name", "email", "note", "time"].forEach((x) => {
@@ -19,7 +19,11 @@ export function getReservationInputs(day) {
 
   reservation.day = day;
 
-  reservation.id = ID();
+  if (id) {
+    reservation.id = id;
+  } else {
+    reservation.id = ID();
+  }
 
   return reservation;
 }

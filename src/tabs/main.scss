@@ -10,22 +10,8 @@
 }
 
 
-#draw {
-  display: block;
-  div {
-    position: absolute;
-    right: 0;
-    box-shadow: var(--inset-shadow);
-  }
 
-  .erase {
-    position: absolute;
-    right: 0px;
-    top: 20px;
-    background: white;
-    border-radius: 5px 0 0 5px;
-  }
-}
+
 
 
 
@@ -36,16 +22,13 @@
   position: absolute;
   box-shadow: var(--shadow);
 }
-  #ipad{
-position:fixed;
-right: 0;top:0;
-  }
 
-  #open-reservation-button{
-    left:0;right:unset;
-  }
+#open-reservation-button{
+  left:0;right:unset;
+}
 
-  #reservation-form{
-    width:350px;
-  }
+#reservation-form{
+  width:350px;
+}
+
 }
