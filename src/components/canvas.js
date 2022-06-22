@@ -49,6 +49,8 @@ export const Canvas = ({ state }) => {
     setTally(x);
   }, [state]);
 
+  console.log(tally);
+
   return (
     <div id="canvas">
       {
@@ -101,13 +103,11 @@ export const Canvas = ({ state }) => {
       }
 
       <div id="server-tally">
-        {state.servers
-          .filter((server) => tally[server] > 0)
-          .map((server) => (
-            <div key={server} className="server">
-              {tally[server]} {server}
-            </div>
-          ))}
+        {Object.keys(tally).map((server) => (
+          <div key={server} className="server">
+            {tally[server]} {server}
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -43,7 +43,7 @@ export const Login = () => {
   };
 
   // force guest
-  // loginGuest();
+  loginGuest();
 
   return (
     <div id="login-page">

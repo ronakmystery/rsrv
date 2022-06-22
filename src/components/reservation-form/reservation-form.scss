@@ -99,6 +99,7 @@ background:var(--light);
   .server{
     margin:10px;
     margin-right:0;
+    transition:.3s;
     &:last-child {
     margin-right: 20px;
     }   
@@ -106,6 +107,7 @@ background:var(--light);
     &.reservation-server{
       background:var(--theme);
       color:white;
+      
     }
   }
 

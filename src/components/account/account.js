@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 
-import * as actionCreators from "../database/redux/actions";
+import * as actionCreators from "../../database/redux/actions";
 
 import { useSelector } from "react-redux";
 
 import "./account.scss";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
+import { Settings } from "./settings";
 
 export const Account = () => {
   const dispatch = useDispatch();
@@ -58,37 +59,12 @@ export const Account = () => {
           >
             arrow_forward
           </i>
-          {!settings && (
-            <button
-              onClick={() => {
-                setSettings(true);
-              }}
-            >
-              settings
-            </button>
-          )}
 
-          <AnimatePresence></AnimatePresence>
-
-          <AnimatePresence>
-            {settings && (
-              <motion.div
-                id="settings"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0 }}
-              >
-                edede
-                <button
-                  onClick={() => {
-                    setSettings(false);
-                  }}
-                >
-                  close
-                </button>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          <Settings
+            settings={settings}
+            setSettings={setSettings}
+            state={state}
+          />
         </motion.div>
       )}
     </div>
