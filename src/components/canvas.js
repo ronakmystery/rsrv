@@ -113,7 +113,7 @@ export const Canvas = ({ state }) => {
         TALLY
         {Object.keys(tally).map((id) => (
           <div key={id} className="server">
-            {tally[id].people} {tally[id].name}
+            {tally[id].people ? tally[id].people : "?"} {tally[id].name}
           </div>
         ))}
       </div>

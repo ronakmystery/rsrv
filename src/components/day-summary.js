@@ -41,7 +41,9 @@ export const DaySummary = () => {
         <i className="material-icons-round">people</i>{" "}
         <span>
           {totalConfirmedPeoplePerHour(dayReservations())}/
-          {totalPeoplePerHour(dayReservations())}
+          {totalPeoplePerHour(dayReservations())
+            ? totalPeoplePerHour(dayReservations())
+            : "?"}
         </span>
       </div>
     </motion.div>

@@ -13,9 +13,9 @@
 }
 
 #top-bar{
-  
   box-shadow:var(--shadow);
   padding: 10px;
+  padding-left: 60px;
 
   button{
     margin: 10px;
@@ -31,7 +31,8 @@
 box-shadow: var(--shadow);
 padding: 10px;
 position: absolute;
-border-radius: 5px 0 0 5px;
-right: 0;
+border-radius: 0 5px 5px 0;
+left: 0;
+width: 30px;
 }
 
