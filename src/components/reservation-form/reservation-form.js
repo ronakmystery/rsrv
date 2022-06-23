@@ -76,6 +76,7 @@ export const ReservationForm = () => {
             setShowForm={setShowForm}
             setReservation={setReservation}
             server={server}
+            setServer={setServer}
           />
         </motion.div>
       )}

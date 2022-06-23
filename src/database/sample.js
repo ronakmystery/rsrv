@@ -12,8 +12,7 @@ export const SampleReservations = [
     email: "jane@gmail.com",
     id: ID(),
     phone: "777-777-7777",
-    time: "17:00",
-    server: "logan"
+    time: "17:00"
   },
   {
     name: "john",
@@ -24,8 +23,7 @@ export const SampleReservations = [
     email: "john@gmail.com",
     id: ID(),
     phone: "777-777-7777",
-    time: "15:00",
-    server: "vincent"
+    time: "15:00"
   },
   {
     name: "jack",
@@ -37,7 +35,10 @@ export const SampleReservations = [
     id: ID(),
     phone: "777-777-7777",
     time: "15:30",
-    server: "adam"
+    server: {
+      name: "john doe",
+      id: "kdnwlkn23123"
+    }
   }
 ];
 

@@ -6,7 +6,7 @@
   width: 100%;
   margin: auto;
   height: 100%;
-  z-index: 100;
+  z-index: 200;
 
 
   #close-settings{
@@ -17,8 +17,26 @@
     position: absolute;
     border-radius: 0 5px 5px 0;
     left: 0;
-    top:20px;
+    top:10px;
     width: 30px;
+  }
+
+  #servers-setting{
+    margin-left: 70px;
+    margin-top:20px;
+    max-width: 500px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+
+    .add-server{
+      box-shadow: var(--shadow);
+      padding: 5px;
+      display: block;
+      width: fit-content;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   }
 
 }

@@ -58,7 +58,7 @@ export const Account = () => {
             }}
             className="material-icons-round"
           >
-            arrow_forward
+            arrow_backward
           </i>
 
           <Settings
