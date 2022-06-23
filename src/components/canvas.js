@@ -98,10 +98,10 @@ export const Canvas = ({ state }) => {
             >
               <div>{convert24to12(reservation.time)}</div>
               <div className="reservation-name">{reservation.name} </div>
-              <div>{reservation.people}</div>
+              <div> {reservation.people ? reservation.people : "?"}</div>
               {reservation.server?.name && (
                 <div className="reservation-server">
-                  {getInitals(reservation.server.name)}
+                  {reservation.server.name.slice(0, 3)}
                 </div>
               )}
             </motion.div>
@@ -110,6 +110,7 @@ export const Canvas = ({ state }) => {
       }
 
       <div id="server-tally">
+        TALLY
         {Object.keys(tally).map((id) => (
           <div key={id} className="server">
             {tally[id].people} {tally[id].name}

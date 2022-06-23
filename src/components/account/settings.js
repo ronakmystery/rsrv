@@ -47,7 +47,13 @@ export const Settings = ({ settings, setSettings, state }) => {
               arrow_backward
             </i>
 
-            <div id="servers-setting">
+            <motion.div
+              initial={{ scale: 0.75, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              id="servers-setting"
+            >
+              <div>SERVERS</div>
               {state.servers.map((s) => (
                 <button
                   id={s.id}
@@ -69,19 +75,21 @@ export const Settings = ({ settings, setSettings, state }) => {
                   onChange={(e) => setServer(e.target.value)}
                 ></input>
                 <i
-                  className="material-icons-round"
+                  className="material-icons-round add-server"
                   onClick={() => {
-                    addServer({
-                      id: ID(),
-                      name: server
-                    });
-                    setServer("");
+                    if (server) {
+                      addServer({
+                        id: ID(),
+                        name: server
+                      });
+                      setServer("");
+                    }
                   }}
                 >
                   check
                 </i>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
