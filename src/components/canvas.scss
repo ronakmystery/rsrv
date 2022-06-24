@@ -39,6 +39,7 @@ opacity: 1 !important;
   .reservation-name{
     text-overflow: ellipsis;
     overflow: hidden;
+    white-space: nowrap;
   }
   .reservation-server{
     position: absolute;
@@ -64,6 +65,7 @@ opacity: 1 !important;
 
   .server{
     margin: 10px;
+    font-size: .75rem;
     text-transform: uppercase;
   }
 }
