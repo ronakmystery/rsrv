@@ -59,7 +59,9 @@ export const Login = () => {
 
       {/* <LoginForm /> */}
       <a href="mailto:ronakmystery@gmail.com">
-        <div id="about">Designed & Developed by Ronak Mistry</div>
+        <div id="about">
+          Designed & Developed by <div>Ronak Mistry</div>
+        </div>
         {/* <button id="sign-up-button">sign up</button> */}
       </a>
       <BannerImg id="login-banner-img" />
