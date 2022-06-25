@@ -69,6 +69,9 @@ export const Canvas = ({ state }) => {
               onTouchEnd={(e) => {
                 updateReservationPosition(e, reservation);
               }}
+              onMouseUp={(e) => {
+                updateReservationPosition(e, reservation);
+              }}
               initial={{
                 opacity: 0,
                 left: reservation.position?.x,

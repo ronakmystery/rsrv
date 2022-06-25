@@ -70,24 +70,26 @@ export const Settings = ({ settings, setSettings, state }) => {
 
               <div id="add-server">
                 <input
-                  placeholder="server..."
+                  placeholder="New server..."
                   value={server}
                   onChange={(e) => setServer(e.target.value)}
                 ></input>
-                <i
-                  className="material-icons-round add-server"
-                  onClick={() => {
-                    if (server) {
-                      addServer({
-                        id: ID(),
-                        name: server
-                      });
-                      setServer("");
-                    }
-                  }}
-                >
-                  check
-                </i>
+                {server && (
+                  <i
+                    className="material-icons-round add-server"
+                    onClick={() => {
+                      if (server) {
+                        addServer({
+                          id: ID(),
+                          name: server
+                        });
+                        setServer("");
+                      }
+                    }}
+                  >
+                    check
+                  </i>
+                )}
               </div>
             </motion.div>
           </motion.div>

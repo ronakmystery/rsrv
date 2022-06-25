@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 
-import { Login } from "../components/login";
+import { Login } from "../components/login/login";
 import { Home } from "./home";
 
 import { useSelector } from "react-redux";

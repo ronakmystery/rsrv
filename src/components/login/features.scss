@@ -1,0 +1,31 @@
+#features{
+  overflow: scroll;
+  height: 100%;
+
+  .feature{
+    margin: 40px;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 400px;
+
+    box-shadow: var(--shadow);
+  }
+
+  .feature-icon{
+    font-size:200px;
+    text-align: right;
+    
+  }
+  .feature-name{
+    font-size: 3rem;
+    margin-bottom:20px;
+    text-align: left;
+    color:var(--theme);
+  }
+  .feature-description{
+    font-size: 1.5rem;
+    text-align: left;
+    font-family:var(--secondary-font);
+  }
+
+}
