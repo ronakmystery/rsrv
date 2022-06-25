@@ -2,17 +2,19 @@ import React, { useEffect } from "react";
 
 import "./login.scss";
 
-import { ReactComponent as BannerImg } from "../assets/banner-img.svg";
+import { ReactComponent as BannerImg } from "../../assets/banner-img.svg";
 import { LoginForm } from "./login-form";
 
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 
-import * as actionCreators from "../database/redux/actions";
+import * as actionCreators from "../../database/redux/actions";
 
-import { store } from "../database/redux/reducers";
+import { store } from "../../database/redux/reducers";
 
-import { LS } from "../functions/local-storage";
+import { LS } from "../../functions/local-storage";
+
+import { Features } from "./features";
 
 store.subscribe(() => {
   let state = store.getState();
@@ -65,6 +67,8 @@ export const Login = () => {
         {/* <button id="sign-up-button">sign up</button> */}
       </a>
       <BannerImg id="login-banner-img" />
+
+      <Features />
     </div>
   );
 };

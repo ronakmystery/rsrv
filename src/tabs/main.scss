@@ -31,4 +31,12 @@
   width:350px;
 }
 
+#features{
+  position: fixed;
+  top:0;right:0;
+  width: calc(100% - 350px);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
 }
