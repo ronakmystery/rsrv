@@ -21,19 +21,18 @@ export const Account = () => {
   const dispatch = useDispatch();
   const { setUser } = bindActionCreators(actionCreators, dispatch);
 
-  let logo = `https://res.cloudinary.com/baudelaire/image/upload/w_100/v1587884625/reserve/${state.user}`;
-
   return (
     <div id="account">
       {!topBar && (
-        <img
+        <div
           alt="user-img"
-          src={logo}
           id="user-img"
           onClick={() => {
             setTopBar(true);
           }}
-        />
+        >
+          😃
+        </div>
       )}
 
       {topBar && (
