@@ -4,7 +4,7 @@ import "./features.scss";
 
 export const Features = () => {
   const feature = {
-    offscreen: { x: -100, scale: 0.5, opacity: 0 },
+    offscreen: { x: -200, scale: 0.5, opacity: 0.5 },
     onscreen: { x: 0, scale: 1, opacity: 1 }
   };
   return (
