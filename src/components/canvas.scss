@@ -52,6 +52,14 @@ opacity: 1 !important;
     color: white;
     border-radius: 5px;
   }
+  .reservation-note{
+    color:var(--yellow);
+margin-left:10px;
+font-size: 20px;
+position: absolute;
+bottom:0;right:0;
+margin:2px 4px;
+  }
 }
 
 #server-tally{

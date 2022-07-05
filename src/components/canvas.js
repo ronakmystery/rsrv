@@ -107,6 +107,9 @@ export const Canvas = ({ state }) => {
                   {reservation.server.name.slice(0, 3)}
                 </div>
               )}
+              {reservation.note && (
+                <i className="material-icons-round reservation-note">note</i>
+              )}
             </motion.div>
           ))}
         </div>
