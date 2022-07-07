@@ -20,8 +20,9 @@ sub{
   color:black;
   background:white;
   padding: 20px 0 10px 0;
+  font-size:.75rem;
   div{
-    font-size: 1.25rem;
+    font-size: 1rem;
     margin: 5px;
     font-family: var(--primary-font);
   }
@@ -43,7 +44,7 @@ sub{
 
 
   .github{
-    font-size: 3rem;
+    font-size: 2rem;
     color:var(--theme);
   }
 
