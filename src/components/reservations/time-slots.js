@@ -10,28 +10,53 @@ import { motion } from "framer-motion";
 
 import { convertToHour, convert24to12 } from "../../functions/time";
 
+let sortReservationsByHour = (todaysReservations) => {
+  let timeSlots = {};
+
+  let hours = [
+    ...new Set(
+      todaysReservations.map((reservation) => convertToHour(reservation.time))
+    )
+  ].sort((a, b) => (a > b ? 1 : -1));
+
+  hours.forEach((hour) => {
+    timeSlots[hour] = [
+      ...todaysReservations.filter(
+        (reservation) => convertToHour(reservation.time) === hour
+      )
+    ].sort((a, b) => (a.time > b.time ? 1 : -1));
+  });
+  return timeSlots;
+};
+
+let sortReservationsByTime = (todaysReservations) => {
+  let timeSlots = {};
+
+  todaysReservations.forEach((r) => {
+    let timeSlot = convert24to12(r.time);
+    if (timeSlots[timeSlot]) {
+      timeSlots[timeSlot].push(r);
+    } else {
+      timeSlots[timeSlot] = [r];
+    }
+  });
+
+  let sortedTimes = Object.keys(timeSlots).sort((a, b) => (a > b ? 1 : -1));
+  let sortedTimeSlots = {};
+  sortedTimes.forEach((t) => {
+    sortedTimeSlots[t] = timeSlots[t];
+  });
+
+  return sortedTimeSlots;
+};
+
 export const TimeSlots = ({ todaysReservations, setReservation }) => {
   const [timeSlots, setTimeSlots] = useState({});
   const state = useSelector((state) => state);
 
   useEffect(() => {
-    let timeSlots = {};
-
-    let hours = [
-      ...new Set(
-        todaysReservations.map((reservation) => convertToHour(reservation.time))
-      )
-    ].sort((a, b) => (a > b ? 1 : -1));
-
-    hours.forEach((hour) => {
-      timeSlots[hour] = [
-        ...todaysReservations.filter(
-          (reservation) => convertToHour(reservation.time) === hour
-        )
-      ].sort((a, b) => (a.time > b.time ? 1 : -1));
-    });
-
-    setTimeSlots(timeSlots);
+    // setTimeSlots(sortReservationsByHour(todaysReservations));
+    setTimeSlots(sortReservationsByTime(todaysReservations));
   }, [todaysReservations]);
 
   return (
