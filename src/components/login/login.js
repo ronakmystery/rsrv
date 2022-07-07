@@ -60,15 +60,17 @@ export const Login = () => {
       </button>
 
       {/* <LoginForm /> */}
-      <a href="mailto:ronakmystery@gmail.com">
-        <div id="about">
-          Designed & Developed by <div>Ronak Mistry</div>
-          <a href="https://github.com/ronakmystery/rsrv">
-            <i className="material-icons-round github">code</i>
-          </a>
-        </div>
-        {/* <button id="sign-up-button">sign up</button> */}
-      </a>
+      <div id="about">
+        Designed & Developed by <div>Ronak Mistry</div>
+        <a href="https://github.com/ronakmystery/rsrv">
+          <i className="material-icons-round github">code</i>
+        </a>
+      </div>
+
+      {/* <a href="mailto:ronakmystery@gmail.com">
+        <button id="sign-up-button">sign up</button>
+      </a> */}
+
       <BannerImg id="login-banner-img" />
 
       <Features />

@@ -28,7 +28,7 @@
 
 #reservation-form{
   z-index: 100;
-
+padding-bottom: 20px;
   position: fixed;
   box-sizing: border-box;
   width: 100%;
@@ -79,11 +79,11 @@ input{
   }
   #add-reservation,#update-reservation{
     position: absolute;
-    right:0;bottom:0;
+    right:0;bottom:20px;
   }
   #delete-reservation{
     position: absolute;
-    left:0;bottom:0;
+    left:0;bottom:20px;
   }
 }
 
