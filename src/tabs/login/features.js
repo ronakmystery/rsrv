@@ -13,8 +13,7 @@ export const Features = () => {
         {
           icon: "📒",
           feat: "Reservations",
-          desc:
-            "Take detailed reservations which are then automatically sorted by hour"
+          desc: "Take detailed reservations which are then automatically sorted"
         },
         {
           icon: "📋",

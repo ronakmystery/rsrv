@@ -13,14 +13,17 @@
 
 
 
-
-
 @media(min-width: 1000px){
 
 #main{
   width:350px;
   position: absolute;
   box-shadow: var(--shadow);
+}
+
+#bottom-bar{
+  width:350px;
+  left:0;
 }
 
 #open-reservation-button{

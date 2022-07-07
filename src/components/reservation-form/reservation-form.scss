@@ -1,7 +1,16 @@
-#open-reservation-button{
-  position: fixed;
+
+#bottom-bar{
+  width: 100%;
   background:white;
+height: 40px;
+position: fixed;
+right:0;bottom:0;
+}
+
+#open-reservation-button{
+  position: absolute;
   right:0;bottom:0;
+  background:white;
   margin:20px;
   padding: 5px;
   box-shadow: var(--shadow);
