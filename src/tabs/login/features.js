@@ -16,14 +16,9 @@ export const Features = () => {
           desc: "Take detailed reservations which are then automatically sorted"
         },
         {
-          icon: "📋",
-          feat: "Summary",
-          desc: "See a daily summary of reservations for the day"
-        },
-        {
-          icon: "🗓",
-          feat: "Calendar",
-          desc: "Robust calendar for daily tracking"
+          icon: "🗺",
+          feat: "Floorchart",
+          desc: "A simple floorchart with an auto-tally of guests per server"
         },
         {
           icon: "📝",
@@ -31,9 +26,9 @@ export const Features = () => {
           desc: "Take a daily note"
         },
         {
-          icon: "🗺",
-          feat: "Floorchart",
-          desc: "A simple floorchart with an auto-tally of guests per server"
+          icon: "📋",
+          feat: "Summary",
+          desc: "See a summary of reservations for the day"
         }
       ].map((x) => (
         <motion.div

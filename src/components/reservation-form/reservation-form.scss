@@ -42,7 +42,7 @@ padding-bottom: 20px;
   box-sizing: border-box;
   width: 100%;
   bottom: 0px;
-  background: var(--green);
+  background: white;
   box-shadow: var(--shadow);
   border-radius: 5px 5px 0 0;
 
@@ -106,6 +106,7 @@ input{
 border-radius: 5px;
 background:var(--light);
   .server{
+    background: white;
     margin:10px;
     margin-right:0;
     transition:.3s;

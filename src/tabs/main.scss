@@ -1,7 +1,9 @@
 #main{
   height: 100%;
   overflow: scroll;
+}
 
+#home{
   &::after {
     content: "";
     display: block;
@@ -12,13 +14,18 @@
 
 
 
-
 @media(min-width: 1000px){
 
 #main{
   width:350px;
   position: absolute;
   box-shadow: var(--shadow);
+}
+
+#about{
+  position: absolute;
+  bottom: 0;
+  width: 350px;
 }
 
 #bottom-bar{
