@@ -6,7 +6,7 @@ export const SampleReservations = [
   {
     name: "jane",
     people: 3,
-    note: "birthday",
+    note: "birthday 🎂",
     confirmed: false,
     day: today,
     email: "jane@gmail.com",
@@ -43,7 +43,7 @@ export const SampleReservations = [
 ];
 
 export const SampleNotes = {
-  [today]: "Daily Note..."
+  [today]: "Let my know if you find any bugs 🐞!"
 };
 
 export const SampleServers = [

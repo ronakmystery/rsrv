@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 
 import { convert24to12 } from "../functions/time";
-import { getInitals } from "../functions/get-initals";
+// import { getInitals } from "../functions/get-initals";
 
 import "./canvas.scss";
 
@@ -19,12 +19,6 @@ export const Canvas = ({ state }) => {
     dispatch
   );
 
-  let todaysReservations = state.reservations.filter(
-    (reservation) => reservation.day === state.day
-  );
-
-  const constraintsRef = useRef(null);
-
   let updateReservationPosition = (e, reservation) => {
     reservation.position = {};
     reservation.position.x =
@@ -34,8 +28,15 @@ export const Canvas = ({ state }) => {
     updateReservation(reservation);
   };
 
-  const [tally, setTally] = useState({});
+  const [todaysReservations, setTodaysReservations] = useState([]);
+  useEffect(() => {
+    let todaysReservations = state.reservations.filter(
+      (reservation) => reservation.day === state.day
+    );
+    setTodaysReservations(todaysReservations);
+  }, [state]);
 
+  const [tally, setTally] = useState({});
   useEffect(() => {
     let x = {};
     todaysReservations.forEach((r) => {
@@ -54,7 +55,9 @@ export const Canvas = ({ state }) => {
       }
     });
     setTally(x);
-  }, [state]);
+  }, [todaysReservations]);
+
+  const constraintsRef = useRef(null);
 
   return (
     <div id="canvas">

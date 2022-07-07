@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import "./login.scss";
 
 import { ReactComponent as BannerImg } from "../../assets/banner-img.svg";
-import { LoginForm } from "./login-form";
+// import { LoginForm } from "./login-form";
 
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";

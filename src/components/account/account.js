@@ -31,7 +31,7 @@ export const Account = () => {
             setTopBar(true);
           }}
         >
-          🤔
+          🙋‍♂️
         </div>
       )}
 
