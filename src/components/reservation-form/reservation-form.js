@@ -38,16 +38,18 @@ export const ReservationForm = () => {
   return (
     <>
       {!showForm ? (
-        <button id="open-reservation-button">
-          <i
-            className="material-icons-round"
-            onClick={() => {
-              setShowForm(true);
-            }}
-          >
-            add
-          </i>
-        </button>
+        <div id="bottom-bar">
+          <button id="open-reservation-button">
+            <i
+              className="material-icons-round"
+              onClick={() => {
+                setShowForm(true);
+              }}
+            >
+              add
+            </i>
+          </button>
+        </div>
       ) : (
         <motion.div
           id="reservation-form"
