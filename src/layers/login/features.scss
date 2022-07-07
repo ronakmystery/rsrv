@@ -3,6 +3,10 @@
   height: 100%;
 
   .feature{
+    cursor: none;
+
+    height: 200px;
+    position: relative;
     margin: 40px;
     padding: 20px;
     background: white;
@@ -13,13 +17,15 @@
   }
 
   .feature-icon{
-    font-size:150px;
+    font-size:100px;
     text-align: right;
-    
+    position: absolute;
+    bottom:10px;right:10px;
+    color:var(--theme);
   }
   .feature-name{
     font-size: 2rem;
-    margin-bottom:20px;
+    margin-bottom:10px;
     text-align: left;
     color:var(--theme);
   }

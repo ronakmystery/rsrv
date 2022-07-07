@@ -24,15 +24,16 @@ export const Account = () => {
   return (
     <div id="account">
       {!topBar && (
-        <div
+        <i
+          className="material-icons-round"
           alt="user-img"
           id="user-img"
           onClick={() => {
             setTopBar(true);
           }}
         >
-          🙋‍♂️
-        </div>
+          manage_accounts
+        </i>
       )}
 
       {topBar && (
