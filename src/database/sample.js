@@ -43,12 +43,12 @@ export const SampleReservations = [
 ];
 
 export const SampleNotes = {
-  [today]: "Let my know if you find any bugs 🐞!"
+  [today]: "Let me know if you find any bugs 🐞!"
 };
 
 export const SampleServers = [
   {
-    name: "vincent jacob",
+    name: "john doe",
     id: ID()
   },
   {
