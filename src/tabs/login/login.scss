@@ -5,15 +5,27 @@
 
 #app-name{
 font-size: 3rem;
-margin: 20px ;
+margin: 10px 20px 30px 20px ;
 color:var(--theme);
+text-align: left;
+sub{
+  font-size: 1rem;
+}
 }
 
 
 #about{
-  margin: 20px;
+  box-sizing: border-box;
   font-family: var(--secondary-font);
   color:black;
+  background:white;
+  padding: 20px 0 10px 0;
+  font-size:.75rem;
+  div{
+    font-size: 1rem;
+    margin: 5px;
+    font-family: var(--primary-font);
+  }
 }
 
 #try-now-button{
@@ -26,13 +38,13 @@ color:var(--theme);
   }
 
   #login-banner-img{
-   width:calc(100% - 40px);height: 200px;
+   width:calc(100% - 40px);height: 300px;
    margin: 20px;
   }
 
 
   .github{
-    font-size: 3rem;
+    font-size: 2rem;
     color:var(--theme);
   }
 

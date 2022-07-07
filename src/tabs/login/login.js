@@ -49,7 +49,9 @@ export const Login = () => {
 
   return (
     <div id="login-page">
-      <div id="app-name">RSRV</div>
+      <div id="app-name">
+        RSRV<sub>BETA</sub>
+      </div>
       <button
         id="try-now-button"
         onClick={() => {
@@ -60,12 +62,6 @@ export const Login = () => {
       </button>
 
       {/* <LoginForm /> */}
-      <div id="about">
-        Designed & Developed by <div>Ronak Mistry</div>
-        <a href="https://github.com/ronakmystery/rsrv">
-          <i className="material-icons-round github">code</i>
-        </a>
-      </div>
 
       {/* <a href="mailto:ronakmystery@gmail.com">
         <button id="sign-up-button">sign up</button>
@@ -74,6 +70,13 @@ export const Login = () => {
       <BannerImg id="login-banner-img" />
 
       <Features />
+
+      <div id="about">
+        Designed & Developed by <div>Ronak Mistry</div>
+        <a href="https://github.com/ronakmystery/rsrv">
+          <i className="material-icons-round github">code</i>
+        </a>
+      </div>
     </div>
   );
 };

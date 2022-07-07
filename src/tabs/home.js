@@ -10,13 +10,13 @@ import { Account } from "../components/account/account";
 
 export const Home = () => {
   return (
-    <>
+    <div id="home">
       <Account />
       <DaySummary />
       <ReservationCalendar />
       <DailyNote />
       <Reservations />
       <ReservationForm />
-    </>
+    </div>
   );
 };
