@@ -63,16 +63,13 @@ export const Login = () => {
 
       {/* <LoginForm /> */}
 
-      {/* <a href="mailto:ronakmystery@gmail.com">
-        <button id="sign-up-button">sign up</button>
-      </a> */}
-
       <BannerImg id="login-banner-img" />
 
       <Features />
 
       <div id="about">
-        Designed & Developed by <div>Ronak Mistry</div>
+        Designed & Developed by
+        <a href="mailto:ronakmystery@gmail.com">Ronak Mistry</a>
         <a href="https://github.com/ronakmystery/rsrv">
           <i className="material-icons-round github">code</i>
         </a>

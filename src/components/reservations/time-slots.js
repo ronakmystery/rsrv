@@ -8,26 +8,26 @@ import {
 
 import { motion } from "framer-motion";
 
-import { convertToHour, convert24to12 } from "../../functions/time";
+import { convert24to12 } from "../../functions/time";
 
-let sortReservationsByHour = (todaysReservations) => {
-  let timeSlots = {};
+// let sortReservationsByHour = (todaysReservations) => {
+//   let timeSlots = {};
 
-  let hours = [
-    ...new Set(
-      todaysReservations.map((reservation) => convertToHour(reservation.time))
-    )
-  ].sort((a, b) => (a > b ? 1 : -1));
+//   let hours = [
+//     ...new Set(
+//       todaysReservations.map((reservation) => convertToHour(reservation.time))
+//     )
+//   ].sort((a, b) => (a > b ? 1 : -1));
 
-  hours.forEach((hour) => {
-    timeSlots[hour] = [
-      ...todaysReservations.filter(
-        (reservation) => convertToHour(reservation.time) === hour
-      )
-    ].sort((a, b) => (a.time > b.time ? 1 : -1));
-  });
-  return timeSlots;
-};
+//   hours.forEach((hour) => {
+//     timeSlots[hour] = [
+//       ...todaysReservations.filter(
+//         (reservation) => convertToHour(reservation.time) === hour
+//       )
+//     ].sort((a, b) => (a.time > b.time ? 1 : -1));
+//   });
+//   return timeSlots;
+// };
 
 let sortReservationsByTime = (todaysReservations) => {
   let timeSlots = {};

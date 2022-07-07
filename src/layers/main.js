@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Login } from "./login/login";
+import { Login } from "./login";
 import { Home } from "./home";
 
 import { useSelector } from "react-redux";

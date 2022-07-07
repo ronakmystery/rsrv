@@ -6,7 +6,6 @@
 #app-name{
 font-size: 3rem;
 margin: 10px 20px 30px 20px ;
-color:var(--theme);
 text-align: left;
 sub{
   font-size: 1rem;
@@ -15,36 +14,47 @@ sub{
 
 
 #about{
+  position: absolute;
+  width: 100%;
+  text-align: left;
   box-sizing: border-box;
   font-family: var(--secondary-font);
   color:black;
   background:white;
-  padding: 20px 0 10px 0;
+  padding: 20px;
   font-size:.75rem;
-  div{
+  a{
+    color:var(--blue);
+    display: block;
     font-size: 1rem;
-    margin: 5px;
+    margin: 5px 0;
     font-family: var(--primary-font);
   }
+  
 }
 
+
+.github{
+  color:black;
+  font-size: 2rem;
+  box-shadow: var(--shadow);
+  border-radius:5px;
+  padding: 5px;
+  position: absolute;
+  right: 20px;
+  bottom:20px;
+}
+
+
+
 #try-now-button{
-  background: var(--green);
+  background: white;
   color:black;
 }
 
-#try-now-button,#sign-up-button{
-  margin:0 20px;
-  }
 
   #login-banner-img{
    width:calc(100% - 40px);height: 300px;
    margin: 20px;
-  }
-
-
-  .github{
-    font-size: 2rem;
-    color:var(--theme);
   }
 

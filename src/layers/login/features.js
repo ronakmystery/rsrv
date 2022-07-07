@@ -11,22 +11,22 @@ export const Features = () => {
     <div id="features">
       {[
         {
-          icon: "📒",
+          icon: "event_available",
           feat: "Reservations",
           desc: "Take detailed reservations which are then automatically sorted"
         },
         {
-          icon: "🗺",
+          icon: "menu_book",
           feat: "Floorchart",
           desc: "A simple floorchart with an auto-tally of guests per server"
         },
         {
-          icon: "📝",
+          icon: "note",
           feat: "Note",
           desc: "Take a daily note"
         },
         {
-          icon: "📋",
+          icon: "description",
           feat: "Summary",
           desc: "See a summary of reservations for the day"
         }
@@ -38,8 +38,11 @@ export const Features = () => {
           variants={feature}
           className="feature"
           key={x.feat}
+          whileHover={{
+            x: 50
+          }}
         >
-          <div className="feature-icon">{x.icon}</div>
+          <i className="material-icons-round feature-icon">{x.icon}</i>
           <div className="feature-name">{x.feat}</div>
           <div className="feature-description">{x.desc}</div>
         </motion.div>

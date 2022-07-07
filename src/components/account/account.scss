@@ -5,13 +5,15 @@
 
 #user-img{
     position: absolute;
-    top:0;right:0;margin: 20px;
+    top:0;right:0;
+    margin: 20px;
     cursor: pointer;
   height: 50px;width: 50px;
   box-shadow:var(--shadow);
   border-radius:5px;
   font-size: 40px;
   text-align: center;
+  line-height: 50px;
   overflow: hidden;
   background:white;
 }
