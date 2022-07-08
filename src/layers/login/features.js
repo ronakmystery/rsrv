@@ -3,10 +3,6 @@ import { motion } from "framer-motion";
 import "./features.scss";
 
 export const Features = () => {
-  const feature = {
-    offscreen: { x: -100, opacity: 0.5 },
-    onscreen: { x: 0, opacity: 1 }
-  };
   return (
     <div id="features">
       {[
@@ -30,12 +26,11 @@ export const Features = () => {
           feat: "Summary",
           desc: "See a summary of reservations for the day"
         }
-      ].map((x) => (
+      ].map((x, i) => (
         <motion.div
-          initial={"offscreen"}
-          whileInView={"onscreen"}
-          viewport={{ once: false, amount: 0.75 }}
-          variants={feature}
+          initial={{ x: 20, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: (i + 1) * 0.3 }}
           className="feature"
           key={x.feat}
         >
