@@ -4,8 +4,8 @@ import "./features.scss";
 
 export const Features = () => {
   const feature = {
-    offscreen: { x: -200, scale: 0.5, opacity: 0.5 },
-    onscreen: { x: 0, scale: 1, opacity: 1 }
+    offscreen: { x: -100, opacity: 0.5 },
+    onscreen: { x: 0, opacity: 1 }
   };
   return (
     <div id="features">
@@ -34,13 +34,10 @@ export const Features = () => {
         <motion.div
           initial={"offscreen"}
           whileInView={"onscreen"}
-          viewport={{ once: false }}
+          viewport={{ once: false, amount: 0.75 }}
           variants={feature}
           className="feature"
           key={x.feat}
-          whileHover={{
-            x: 50
-          }}
         >
           <i className="material-icons-round feature-icon">{x.icon}</i>
           <div className="feature-name">{x.feat}</div>
