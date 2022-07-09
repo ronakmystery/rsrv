@@ -25,12 +25,7 @@ export const Reservations = () => {
   );
 
   return (
-    <motion.div
-      id="reservations"
-      initial={{ scale: 0.75, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ delay: 0.8 }}
-    >
+    <div id="reservations">
       {todaysReservations.length !== 0 ? (
         <TimeSlots
           setReservation={setReservation}
@@ -46,6 +41,6 @@ export const Reservations = () => {
           <NoReservations />
         </motion.div>
       )}
-    </motion.div>
+    </div>
   );
 };

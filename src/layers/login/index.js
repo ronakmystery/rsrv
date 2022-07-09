@@ -16,6 +16,8 @@ import { LS } from "../../functions/local-storage";
 
 import { Features } from "./features";
 
+import { motion } from "framer-motion";
+
 store.subscribe(() => {
   let state = store.getState();
   let data = {
@@ -48,7 +50,11 @@ export const Login = () => {
   // loginGuest();
 
   return (
-    <div id="login-page">
+    <motion.div
+      id="login-page"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <div id="app-name">
         RSRV<sub>BETA</sub>
       </div>
@@ -74,6 +80,6 @@ export const Login = () => {
           <i className="material-icons-round github">code</i>
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 };
