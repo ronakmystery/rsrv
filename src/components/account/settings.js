@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { useDispatch } from "react-redux";
-import { bindActionCreators, compose } from "redux";
+import { bindActionCreators } from "redux";
 
 import "./settings.scss";
 import * as actionCreators from "../../database/redux/actions";
@@ -47,12 +47,7 @@ export const Settings = ({ settings, setSettings, state }) => {
               arrow_backward
             </i>
 
-            <motion.div
-              initial={{ scale: 0.75, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              id="servers-setting"
-            >
+            <div id="servers-setting">
               <div>SERVERS</div>
               {state.servers.map((s) => (
                 <button
@@ -91,7 +86,7 @@ export const Settings = ({ settings, setSettings, state }) => {
                   </i>
                 )}
               </div>
-            </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

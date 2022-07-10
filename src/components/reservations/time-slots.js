@@ -92,11 +92,10 @@ export const TimeSlots = ({ todaysReservations, setReservation }) => {
                   setReservation(reservation);
                 }}
               >
-                <span className="reservation-time">
-                  {convert24to12(reservation.time)}
-                </span>
                 <div className="reservation-name">{reservation.name} </div>
-                {reservation.people ? reservation.people : "?"}
+                <span className="reservation-people">
+                  {reservation.people ? reservation.people : "?"}
+                </span>
                 {reservation.note && (
                   <i className="material-icons-round note-notification">note</i>
                 )}

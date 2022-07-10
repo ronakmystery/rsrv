@@ -7,7 +7,7 @@
   &::after {
     content: "";
     display: block;
-    height: 400px;
+    height: 500px;
   }
 }
 
@@ -20,6 +20,18 @@
   width:350px;
   position: absolute;
   box-shadow: var(--shadow);
+}
+
+#home{
+  &::after {
+    content: "";
+    display: block;
+    height: 700px;
+  }
+}
+
+#reservation-inputs{
+  height:unset;
 }
 
 #about{

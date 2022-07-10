@@ -8,15 +8,16 @@ import { DailyNote } from "../components/daily-note";
 import { Reservations } from "../components/reservations";
 import { Account } from "../components/account";
 
+import { motion } from "framer-motion";
 export const Home = () => {
   return (
-    <div id="home">
+    <motion.div id="home" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       <Account />
       <DaySummary />
       <ReservationCalendar />
       <DailyNote />
       <Reservations />
       <ReservationForm />
-    </div>
+    </motion.div>
   );
 };

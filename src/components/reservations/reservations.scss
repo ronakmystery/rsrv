@@ -57,12 +57,11 @@ font-size: 20px;
 
   .reservation-name{
     display: inline-block;
-    margin:0 10px;
     text-overflow: ellipsis;
     overflow: hidden;
   }
-  .reservation-time{
-    font-size: .75rem;
+  .reservation-people{
+    margin-left: 5px;
   }
 }
   
