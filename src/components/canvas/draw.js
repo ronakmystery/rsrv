@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 
+import { LS } from "../../functions/local-storage";
+
 let tool = {
   color: "black",
   tip: 3
 };
 
+let canvas;
 let ctx;
 
 let pointer = { x: 0, y: 0 };
@@ -19,6 +22,15 @@ let onPaint = function () {
   ctx.stroke();
 };
 
+let loadCanvas = () => {
+  let url = LS.data.canvas;
+  let img = new Image();
+  img.src = url;
+  img.onload = () => {
+    ctx.drawImage(img, 0, 0);
+  };
+};
+
 export const CanvasDraw = ({ draw, setDraw }) => {
   const [size, setSize] = useState({});
 
@@ -30,7 +42,7 @@ export const CanvasDraw = ({ draw, setDraw }) => {
   }, []);
 
   useEffect(() => {
-    let canvas = document.getElementById("canvas-draw");
+    canvas = document.getElementById("canvas-draw");
     ctx = canvas.getContext("2d");
 
     window.oncontextmenu = (e) => {
@@ -38,6 +50,8 @@ export const CanvasDraw = ({ draw, setDraw }) => {
       e.stopPropagation();
       return false;
     };
+
+    loadCanvas();
 
     canvas.addEventListener(
       "pointermove",
@@ -113,7 +127,7 @@ export const CanvasDraw = ({ draw, setDraw }) => {
           </button>
 
           <button
-            className={color == "black" && "selected-canvas-tool"}
+            className={color == "black" ? "selected-canvas-tool" : ""}
             onClick={() => {
               tool.tip = 3;
               tool.color = "black";
@@ -124,7 +138,7 @@ export const CanvasDraw = ({ draw, setDraw }) => {
           </button>
 
           <button
-            className={color == "white" && "selected-canvas-tool"}
+            className={color == "white" ? "selected-canvas-tool" : ""}
             onClick={() => {
               tool.tip = 30;
               tool.color = "white";
@@ -137,6 +151,8 @@ export const CanvasDraw = ({ draw, setDraw }) => {
           <button
             onClick={() => {
               setDraw(false);
+              LS.data.canvas = canvas.toDataURL();
+              LS.save(LS.data);
             }}
           >
             <i className="material-icons-round">arrow_forward</i>
