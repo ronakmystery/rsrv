@@ -78,3 +78,37 @@ margin:2px 4px;
     text-transform: uppercase;
   }
 }
+
+#canvas-draw{
+  cursor: none;
+  margin: 20px;
+  border-radius: 5px;
+  background:white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    touch-action: none;
+    &.show{
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    &.hide{
+      z-index: 0;
+    }
+}
+
+#canvas-draw-buttons{
+  bottom: 0;
+    right: 0;
+    margin: 10px;
+    position: fixed;
+    button{
+      background:white;
+      margin: 10px;
+      &.selected-canvas-tool{
+        background:var(--green);
+        color:white;
+        }
+    }
+}
+
