@@ -45,7 +45,6 @@ export const CanvasDraw = ({ draw, setDraw }) => {
     canvas.addEventListener(
       "pointerdown",
       function (e) {
-        console.log(this.offsetLeft);
         pointer.x = e.pageX - this.offsetLeft - size.x + 20;
         pointer.y = e.pageY - this.offsetTop;
         ctx.beginPath();
@@ -72,13 +71,15 @@ export const CanvasDraw = ({ draw, setDraw }) => {
     );
   }, [size]);
 
+  const [color, setColor] = useState("black");
+
   return (
     <>
       <canvas
         id="canvas-draw"
         width={size.width}
         height={size.height}
-        style={{ zIndex: draw ? 100 : 0 }}
+        className={draw ? "show" : "hide"}
       ></canvas>
 
       {!draw && (
@@ -97,26 +98,31 @@ export const CanvasDraw = ({ draw, setDraw }) => {
         <div id="canvas-draw-buttons">
           <button
             onClick={() => {
-              console.log(size);
-              ctx.clearRect(0, 0, size.width, size.height);
+              if (window.confirm("Clear canvas?")) {
+                ctx.clearRect(0, 0, size.width, size.height);
+              }
             }}
           >
             <i className="material-icons-round">delete</i>
           </button>
 
           <button
+            className={color == "black" && "selected-canvas-tool"}
             onClick={() => {
               tool.tip = 3;
               tool.color = "black";
+              setColor(tool.color);
             }}
           >
             <i className="material-icons-round">edit</i>
           </button>
 
           <button
+            className={color == "white" && "selected-canvas-tool"}
             onClick={() => {
               tool.tip = 30;
               tool.color = "white";
+              setColor(tool.color);
             }}
           >
             <i className="material-icons-round">auto_fix_normal</i>
@@ -127,7 +133,7 @@ export const CanvasDraw = ({ draw, setDraw }) => {
               setDraw(false);
             }}
           >
-            <i className="material-icons-round">close</i>
+            <i className="material-icons-round">arrow_forward</i>
           </button>
         </div>
       )}

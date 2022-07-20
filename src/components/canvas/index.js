@@ -61,7 +61,7 @@ export const Canvas = ({ state }) => {
 
   const constraintsRef = useRef(null);
 
-  const [draw, setDraw] = useState(true);
+  const [draw, setDraw] = useState(false);
 
   return (
     <div id="canvas">
