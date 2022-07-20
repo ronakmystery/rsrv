@@ -23,7 +23,8 @@ store.subscribe(() => {
   let data = {
     dailynotes: state.dailynotes,
     reservations: state.reservations,
-    servers: state.servers
+    servers: state.servers,
+    canvas: LS.data.canvas
   };
   LS.save(data);
 });

@@ -1,7 +1,8 @@
 import {
   SampleReservations,
   SampleNotes,
-  SampleServers
+  SampleServers,
+  SampleCanvas
 } from "../database/sample";
 
 export const LS = {
@@ -14,7 +15,8 @@ export const LS = {
       this.data = {
         dailynotes: SampleNotes,
         reservations: SampleReservations,
-        servers: SampleServers
+        servers: SampleServers,
+        canvas: SampleCanvas
       };
       this.save(this.data);
     }
