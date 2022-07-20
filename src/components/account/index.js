@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 import "./account.scss";
 
 import { motion } from "framer-motion";
-import { Settings } from "./settings";
+import { Settings } from "../../layers/settings";
 
 export const Account = () => {
   const state = useSelector((state) => state);

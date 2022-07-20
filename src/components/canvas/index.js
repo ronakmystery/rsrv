@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 
 import { motion } from "framer-motion";
 
-import { convert24to12 } from "../functions/time";
+import { convert24to12 } from "../../functions/time";
 // import { getInitals } from "../functions/get-initals";
 
 import "./canvas.scss";
@@ -10,7 +10,9 @@ import "./canvas.scss";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 
-import * as actionCreators from "../database/redux/actions";
+import * as actionCreators from "../../database/redux/actions";
+
+import { CanvasDraw } from "./draw";
 
 export const Canvas = ({ state }) => {
   const dispatch = useDispatch();
@@ -59,8 +61,12 @@ export const Canvas = ({ state }) => {
 
   const constraintsRef = useRef(null);
 
+  const [draw, setDraw] = useState(true);
+
   return (
     <div id="canvas">
+      <CanvasDraw draw={draw} setDraw={setDraw} />
+
       {
         <div id="canvas-reservations" ref={constraintsRef}>
           {todaysReservations.map((reservation, n) => (

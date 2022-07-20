@@ -5,8 +5,8 @@ import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import "./settings.scss";
-import * as actionCreators from "../../database/redux/actions";
-import { ID } from "../../functions/id";
+import * as actionCreators from "../database/redux/actions";
+import { ID } from "../functions/id";
 
 export const Settings = ({ settings, setSettings, state }) => {
   const dispatch = useDispatch();

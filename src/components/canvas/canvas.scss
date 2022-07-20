@@ -78,3 +78,22 @@ margin:2px 4px;
     text-transform: uppercase;
   }
 }
+
+#canvas-draw{
+  cursor: none;
+  box-shadow: var(--inset-shadow);
+  margin: 20px;
+  border-radius: 5px;
+  background:white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    touch-action: none;
+}
+
+#canvas-draw-buttons{
+  bottom: 0;
+    right: 0;
+    margin: 20px;
+    position: fixed;
+}
