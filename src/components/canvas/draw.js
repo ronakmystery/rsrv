@@ -33,6 +33,12 @@ export const CanvasDraw = ({ draw, setDraw }) => {
     let canvas = document.getElementById("canvas-draw");
     ctx = canvas.getContext("2d");
 
+    window.oncontextmenu = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    };
+
     canvas.addEventListener(
       "pointermove",
       function (e) {
