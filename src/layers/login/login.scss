@@ -16,6 +16,7 @@ sub{
 #about{
   position: absolute;
   width: 100%;
+  bottom: 0;
   text-align: left;
   box-sizing: border-box;
   font-family: var(--secondary-font);
@@ -48,8 +49,8 @@ sub{
 
 
 #try-now-button{
-  background: white;
-  color:black;
+  background: var(--theme);
+  color:white;
 }
 
 
