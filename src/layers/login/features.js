@@ -11,25 +11,16 @@ export const Features = () => {
         },
         {
           icon: "menu_book",
-          feat: "Floorchart",
-          desc: "A simple floorchart with an auto-tally of guests per server"
+          feat: "Floorplan",
+          desc: "A quick and easy of way of creating a floorplan"
         },
         {
-          icon: "note",
-          feat: "Note",
-          desc: "Take a daily note"
-        },
-        {
-          icon: "description",
-          feat: "Summary",
-          desc: "See a summary of reservations for the day"
+          icon: "lightbulb_outline",
+          feat: "Simplify",
+          desc: "Various features that simply handling reservations"
         }
       ].map((x, i) => (
-        <div
-      
-          className="feature"
-          key={x.feat}
-        >
+        <div className="feature" key={x.feat}>
           <i className="material-icons-round feature-icon">{x.icon}</i>
           <div className="feature-name">{x.feat}</div>
           <div className="feature-description">{x.desc}</div>

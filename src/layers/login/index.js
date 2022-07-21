@@ -72,7 +72,7 @@ export const Login = () => {
 
       <BannerImg id="login-banner-img" />
 
-      <Features />
+      {/* <Features /> */}
 
       <div id="about">
         Designed & Developed by

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 
 import { LS } from "../../functions/local-storage";
 
+import { motion } from "framer-motion";
+
 let tool = {
   color: "black",
   tip: 3
@@ -115,8 +117,13 @@ export const CanvasDraw = ({ draw, setDraw }) => {
       )}
 
       {draw && (
-        <div id="canvas-draw-buttons">
+        <motion.div
+          id="canvas-draw-buttons"
+          initial={{ x: 20, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+        >
           <button
+            style={{ background: `var(--red)`, color: "white" }}
             onClick={() => {
               if (window.confirm("Clear canvas?")) {
                 ctx.clearRect(0, 0, size.width, size.height);
@@ -157,7 +164,7 @@ export const CanvasDraw = ({ draw, setDraw }) => {
           >
             <i className="material-icons-round">arrow_forward</i>
           </button>
-        </div>
+        </motion.div>
       )}
     </>
   );
