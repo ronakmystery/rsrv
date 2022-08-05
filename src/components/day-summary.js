@@ -29,7 +29,10 @@ export const DaySummary = () => {
 
   return (
     <div id="day-summary">
-      {dayName()} {monthName()} {state.day}
+      <div>{dayName()}</div>
+      <div>{monthName()}</div>
+      <div>{state.day}</div>
+
       <div id="people-numbers">
         <i className="material-icons-round">people</i>{" "}
         <span>

@@ -123,15 +123,20 @@ export const Canvas = ({ state }) => {
           ))}
         </div>
       }
-
-      <div id="server-tally">
-        TALLY
-        {Object.keys(tally).map((id) => (
-          <div key={id} className="server">
-            {tally[id].people ? tally[id].people : "?"} {tally[id].name}
-          </div>
-        ))}
-      </div>
+      {Object.keys(tally).length > 0 && (
+        <motion.div
+          id="server-tally"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+        >
+          TALLY
+          {Object.keys(tally).map((id) => (
+            <div key={id} className="server">
+              {tally[id].people ? tally[id].people : "?"} {tally[id].name}
+            </div>
+          ))}
+        </motion.div>
+      )}
     </div>
   );
 };
