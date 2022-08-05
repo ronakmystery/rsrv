@@ -1,7 +1,15 @@
 #day-summary{
   margin: 20px;
-  font-size: 1.25rem;
+  font-size: 1rem;
+  div{
+    margin: 5px;
+  }
+  background: white;
+  box-shadow: var(--shadow);
+  width: fit-content;
+  padding: 10px;
+  border-radius: 5px;
 }
 #people-numbers{
-  margin:10px 0;
+  margin-bottom: 5px;
 }
